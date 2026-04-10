@@ -1,0 +1,34 @@
+<svg viewBox="0 0 203 203" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="ed0786c0" x="0" y="0"><g id="Activity Summary-Desktop" data-node-id="3902:80628" clip-path="url(#clip0_3902_80628)"><g id="Frame 294" data-node-id="3902:80657"><g id="Frame 277" data-node-id="3902:80659"><g id="Screen time trends" data-node-id="3902:80666"><g id="Mask group" data-node-id="3902:80668"><g mask="url(#mask2_3902_80628)"><g id="Group 149" data-node-id="3902:80670"><g id="Group 147" data-node-id="3902:80676"><g id="Frame 157" data-node-id="3902:80677"><g id="Frame 154" data-node-id="3902:80678"><g id="pie-chart" data-node-id="3902:80680"><g id="Group 104" data-node-id="I3902:80680;225:1125">
+<circle id="Oval 16" data-node-id="I3902:80680;225:1126" cx="101.5" cy="101.5" r="101" fill="url(#paint1_radial_3902_80628)"/>
+<circle id="Oval 16_2" data-node-id="I3902:80680;225:1127" cx="101.5" cy="101.5" r="88.2" fill="white" stroke="#EAEAEA" stroke-width="0.9"/>
+<ellipse id="Oval 16_3" data-node-id="I3902:80680;225:1129" cx="101.5" cy="101.5" rx="84.15" ry="83.7" fill="#7C3780"/>
+<g id="Mask group_2" data-node-id="I3902:80680;225:1130">
+<mask id="mask5_3902_80628" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="16.5" y="17" width="170" height="169">
+<ellipse id="Oval 17" data-node-id="I3902:80680;225:1131" cx="101.5" cy="101.5" rx="84.15" ry="83.7" fill="#7C3780"/>
+</mask>
+<g mask="url(#mask5_3902_80628)">
+<path id="Vector 3" data-node-id="I3902:80680;225:1132" d="M177.25,38.2l-31,29.5l6,15l33.5,-26z" fill="#229D7A"/>
+<path id="Vector 2" data-node-id="I3902:80680;225:1133" d="M184.25,40.2l-40,34.5l-31,-15.5l43,-44z" fill="#FC644B"/>
+<path id="Vector 1" data-node-id="I3902:80680;225:1134" d="M101.75,54.2v-48l58,13l-33,43z" fill="#FFA600"/>
+</g>
+</g>
+</g><g id="Oval 16_4" data-node-id="I3902:80680;225:1135" filter="url(#filter2_d_3902_80628)">
+<circle cx="101.5" cy="102.04999999999995" r="62.55" fill="white"/>
+</g></g></g></g></g></g></g></g></g></g></g></g><defs><mask id="mask2_3902_80628" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-97.5" y="-152" width="400" height="531">
+<rect id="Rectangle_4" data-node-id="3902:80669" x="-97.5" y="-151.5" width="400" height="530" rx="30" fill="white"/>
+</mask><mask id="mask5_3902_80628" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="976" y="1207" width="170" height="169">
+<ellipse id="Oval 17" data-node-id="I3902:80680;225:1131" cx="1061" cy="1291.5" rx="84.15" ry="83.7" fill="#7C3780"/>
+</mask><filter id="filter2_d_3902_80628" x="29.950000000000045" y="30.5" width="143.1" height="143.1" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="4.5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.396796 0 0 0 0 0.396796 0 0 0 0 0.396796 0 0 0 0.372296 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3902_80628"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3902_80628" result="shape"/>
+</filter><radialGradient id="paint1_radial_3902_80628" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1061 1291.5) rotate(90) scale(101)">
+<stop stop-color="#818F9F"/>
+<stop offset="1" stop-color="white"/>
+</radialGradient><clipPath id="clip0_3902_80628">
+<rect width="1440" height="4709" fill="white" x="-959.5" y="-1190"/>
+</clipPath></defs></svg>

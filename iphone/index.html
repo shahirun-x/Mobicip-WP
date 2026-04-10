@@ -1,0 +1,3179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <style>
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* Figma Variables */
+
+  /* Spacing */
+  --font-size-12: 12px;
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-34: 34px;
+  --font-size-44: 44px;
+  --font-size-181: 18px;
+  --font-size-341: 34px;
+  --font-size-441: 44px;
+  --font-weight-100: 100;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+  --font-weight-800: 800;
+  --font-weight-5001: 500;
+  --font-weight-6001: 600;
+  --font-weight-7001: 700;
+  --font-weight-8001: 800;
+  --height-36: 36px;
+  --height-52: 52px;
+  --item-spacing-0: 0px;
+  --item-spacing-10: 10px;
+  --item-spacing-12: 12px;
+  --item-spacing-40: 40px;
+  --item-spacing-111-8: 111.8px;
+  --item-spacing-13-3: 13.3px;
+  --item-spacing-7-2: 7.2px;
+  --item-spacing-7-5: 7.5px;
+  --item-spacing-m: 32px;
+  --item-spacing-s: 24px;
+  --item-spacing-s1: 16px;
+  --item-spacing-xs: 8px;
+  --letter-spacing-0-7: 0.7px;
+  --line-height-24: 24px;
+  --line-height-26: 26px;
+  --line-height-28: 28px;
+  --line-height-30: 30px;
+  --line-height-48: 48px;
+  --line-height-60: 60px;
+  --line-height-281: 28px;
+  --line-height-13-2: 13.2px;
+  --line-height-21-6: 21.6px;
+  --line-height-23-94: 23.94px;
+  --stroke-weight-2: 2px;
+  --width-1: 1px;
+  --width-144: 144px;
+  --width-457: 457px;
+  --width-460: 460px;
+  --width-472: 472px;
+  --width-504: 504px;
+  --width-720: 720px;
+  --width-1084: 1084px;
+  --width-1428: 1428px;
+  --width-1440: 1440px;
+  --width-217-38: 217.38px;
+
+  /* Color */
+  --color-azure-19: #1a2845;
+  --color-azure-25: #383e48;
+  --color-azure-43: #616b7b;
+  --color-azure-44: #626c7c;
+  --color-azure-57: #3187f3;
+  --color-azure-63: #939baf;
+  --color-azure-71: #9db5ce;
+  --color-azure-89: #d6dfef;
+  --color-azure-891: #d6dfef;
+  --color-black-0: rgba(0, 0, 0, 0);
+  --color-black-18: rgba(0, 0, 0, 0.18);
+  --color-black-30: rgba(0, 0, 0, 0.3);
+  --color-black-36: rgba(0, 0, 0, 0.36);
+  --color-black-54: rgba(0, 0, 0, 0.54);
+  --color-black-60: rgba(0, 0, 0, 0.6);
+  --color-black-80: rgba(0, 0, 0, 0.8);
+  --color-black-801: rgba(0, 0, 0, 0.8);
+  --color-black-solid: #000;
+  --color-grey-13: #1f2024;
+  --color-grey-46: #757575;
+  --color-grey-97: #f2f8ff;
+  --color-white-solid: #fff;
+  --color-white-solid1: #fff;
+
+  /* Font */
+  --font-family-Font-1: Manrope;
+  --font-family-Font-3: Roboto;
+  --font-family-Font-11: Manrope;
+  --font-family-Font-31: Inter;
+
+  /* Common Style Variables */
+
+  /* Color */
+  --color-cornflowerblue: #4aa1ff;
+  --color-gainsboro: #e6e6e6;
+  --color-lightsteelblue: #bdc7d6;
+  --websprgrin-Dodger-Blue: #3187f3;
+  --websprgrin-Periwinkle-Gray: #d6dfef;
+  --wwwmobicipcom-Link-Water: #d6dfef;
+
+  /* Gap */
+  --gap-20: 20px;
+  --gap-24: 24px;
+
+  /* Padding */
+  --padding-0: 0px;
+  --padding-2: 2px;
+  --padding-4: 4px;
+  --padding-8: 8px;
+  --padding-12: 12px;
+  --padding-14: 14px;
+  --padding-16: 16px;
+  --padding-20: 20px;
+  --padding-24: 24px;
+  --padding-26: 26px;
+  --padding-40: 40px;
+  --padding-64: 64px;
+  --padding-72: 72px;
+  --padding-89: 89px;
+  --padding-178: 178px;
+
+  /* BorderRadius */
+  --br-32: 32px;
+  --br-36: 36px;
+
+  /* FontSize */
+  --fs-16: 16px;
+  --fs-18: 18px;
+  --fs-19: 19px;
+  --fs-20: 20px;
+  --fs-26: 26px;
+  --fs-27: 27px;
+
+  /* Shadows */
+  --shadow-drop: 0px 4px 16px rgba(0, 0, 0, 0.05);
+
+  /* WidthHeights */
+  --height-15: 15px;
+  --height-16: 16px;
+  --height-24: 24px;
+  --height-28: 28px;
+  --height-48: 48px;
+  --height-56: 56px;
+  --height-72: 72px;
+  --width-48: 48px;
+  --width-72: 72px;
+  --width-900: 900px;
+  --width-16_8: 16.8px;
+
+  /* LineHeights */
+  --lh-22: 22px;
+  --lh-26: 26px;
+  --lh-35: 35px;
+  --lh-23_9: 23.9px;
+
+  --left-0: 0px;
+  --left-8: 8px;
+  --top-0: 0px;
+  --top-8: 8px;
+}
+
+.end-google-tag-manager-noscri,
+.w-light {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.w-light {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white-solid);
+  overflow-y: auto;
+  display: flex;
+  isolation: isolate;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.end-google-tag-manager-noscri {
+  padding: 80px var(--padding-0) var(--padding-0);
+  box-sizing: border-box;
+  max-width: 100%;
+  z-index: 0;
+  flex-shrink: 0;
+}
+.container,
+.end-google-tag-manager-noscri,
+.section {
+  align-self: stretch;
+  display: flex;
+}
+.container {
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 100%;
+  text-align: center;
+  font-size: var(--font-size-34);
+  color: var(--color-grey-13);
+  font-family: var(--font-family-Font-1);
+}
+.section {
+  height: 578px;
+  align-items: center;
+  justify-content: center;
+  background-image: url(./public/Section@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  text-align: left;
+  font-size: var(--font-size-44);
+}
+.container2 {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-64) var(--padding-178) var(--padding-16);
+  box-sizing: border-box;
+  max-width: var(--width-1440);
+}
+.container3 {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.container4,
+.heading-1 {
+  display: flex;
+  align-items: flex-start;
+}
+.container4 {
+  width: 504px;
+  flex-direction: column;
+  gap: var(--item-spacing-s);
+  max-width: var(--width-504);
+}
+.heading-1 {
+  align-self: stretch;
+}
+.parental-control-app {
+  margin: 0;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  line-height: var(--line-height-60);
+  font-weight: var(--font-weight-800);
+  font-family: inherit;
+}
+.container5 {
+  width: 457px;
+  display: flex;
+  align-items: flex-start;
+  max-width: var(--width-457);
+  font-size: var(--font-size-18);
+  color: var(--color-azure-43);
+}
+.comprehensive-iphone-parental {
+  position: relative;
+  line-height: var(--line-height-30);
+  font-weight: var(--font-weight-600);
+}
+.container6 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-24) var(--padding-0) var(--padding-0);
+}
+.link {
+  cursor: pointer;
+  border: 0;
+  padding: 19px var(--padding-24);
+  background-color: var(--color-azure-57);
+  border-radius: var(--br-32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: var(--width-144);
+}
+.link:hover {
+  background-color: var(--color-cornflowerblue);
+}
+.start-free-trial {
+  position: relative;
+  font-size: var(--font-size-18);
+  line-height: var(--font-size-18);
+  font-weight: var(--font-weight-700);
+  font-family: var(--font-family-Font-1);
+  color: var(--color-white-solid);
+  text-align: center;
+  text-decoration: none;
+}
+.link-download-on-the-app-sto {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--padding-24) var(--padding-0) var(--padding-0);
+  cursor: pointer;
+}
+.picture-download-on-the-app {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 168px;
+  position: relative;
+  max-height: 100%;
+  object-fit: cover;
+}
+.section2 {
+  align-self: stretch;
+  background-color: var(--color-azure-19);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 100%;
+  color: var(--color-white-solid);
+}
+.container7 {
+  flex: 1;
+  overflow: hidden;
+  flex-direction: column;
+  padding: var(--padding-72) var(--padding-178);
+  box-sizing: border-box;
+  max-width: var(--width-1440);
+}
+.container7,
+.container8,
+.heading-2 {
+  display: flex;
+  align-items: flex-start;
+}
+.container8 {
+  width: 100%;
+  flex-direction: column;
+  gap: var(--item-spacing-xs);
+  max-width: var(--width-1084);
+}
+.heading-2 {
+  align-self: stretch;
+  justify-content: center;
+}
+.features-of-our {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: var(--letter-spacing-0-7);
+  line-height: var(--font-size-44);
+  font-weight: var(--font-weight-800);
+  font-family: inherit;
+}
+.container9 {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: var(--font-size-181);
+  color: var(--color-azure-43);
+  font-family: var(--font-family-Font-11);
+}
+.easy-for-parents {
+  position: relative;
+  line-height: var(--line-height-24);
+  font-weight: var(--font-weight-500);
+}
+.container10,
+.container11 {
+  display: flex;
+  max-width: 100%;
+}
+.container10 {
+  align-self: stretch;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--padding-16) var(--padding-0) var(--padding-0);
+  box-sizing: border-box;
+  gap: var(--gap-20);
+}
+.container11 {
+  width: 580px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.container-icon {
+  height: 537px;
+  width: 273px;
+  object-fit: cover;
+}
+.item,
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--item-spacing-s1);
+}
+.list {
+  width: 460px;
+  padding: var(--padding-0) var(--padding-0) var(--padding-16);
+  box-sizing: border-box;
+  max-width: var(--width-460);
+  text-align: left;
+  font-size: var(--item-spacing-s);
+  color: var(--color-azure-71);
+  font-family: var(--font-family-Font-1);
+}
+.item {
+  align-self: stretch;
+  padding: var(--padding-0) var(--padding-0) var(--padding-0) var(--padding-24);
+  position: relative;
+  isolation: isolate;
+  color: var(--color-white-solid);
+}
+.heading-3 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: var(--line-height-28);
+  font-weight: var(--font-weight-800);
+  font-family: inherit;
+  z-index: 0;
+  flex-shrink: 0;
+}
+.container13,
+.container14 {
+  align-self: stretch;
+  display: flex;
+}
+.container13 {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-0) var(--padding-0) var(--padding-12);
+  gap: var(--item-spacing-12);
+  z-index: 1;
+  flex-shrink: 0;
+  font-size: var(--font-size-18);
+}
+.container14 {
+  height: 47.9px;
+  align-items: flex-end;
+  padding: var(--padding-0) var(--padding-0) 0.9px;
+  box-sizing: border-box;
+}
+.instantly-track-your {
+  height: var(--height-48);
+  width: 386px;
+  position: relative;
+  line-height: var(--lh-23_9);
+  font-weight: var(--font-weight-5001);
+  display: flex;
+  align-items: center;
+}
+.container15 {
+  align-self: stretch;
+  height: 23.9px;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--padding-0) var(--padding-0) 0.9px;
+  box-sizing: border-box;
+}
+.share-your-real-time {
+  height: var(--height-24);
+  width: 421px;
+  position: relative;
+  line-height: var(--lh-23_9);
+  font-weight: var(--font-weight-5001);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.container16 {
+  align-self: stretch;
+  height: 47.9px;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--padding-0) var(--padding-0) 1px;
+  box-sizing: border-box;
+}
+.frame-parent,
+.link-strong {
+  display: flex;
+  align-items: flex-start;
+}
+.link-strong {
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1;
+}
+.frame-parent {
+  flex-shrink: 0;
+  row-gap: var(--gap-20);
+}
+.set-geofences-to-stay-within-a-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-0) var(--padding-0) var(--padding-0) var(--padding-0);
+}
+.set-geofences-to {
+  margin-right: -0.3px;
+  width: 259.2px;
+  height: var(--height-24);
+  line-height: var(--lh-23_9);
+  font-weight: var(--font-weight-5001);
+  align-items: center;
+}
+.boundary-parent,
+.safe-location,
+.set-geofences-to {
+  display: flex;
+  flex-shrink: 0;
+  position: relative;
+}
+.safe-location {
+  height: var(--height-24);
+  width: 115.2px;
+  line-height: var(--lh-23_9);
+  font-weight: var(--font-weight-800);
+  color: inherit;
+  align-items: center;
+  text-decoration: none;
+}
+.boundary-parent {
+  align-items: flex-start;
+  margin-top: -0.1px;
+}
+.and-receive-instant,
+.boundary {
+  height: var(--height-24);
+  position: relative;
+  line-height: var(--lh-23_9);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.boundary {
+  width: 85px;
+  font-weight: var(--font-weight-800);
+  color: inherit;
+  text-decoration: none;
+}
+.and-receive-instant {
+  margin-left: -0.7px;
+  width: 217.9px;
+  font-weight: var(--font-weight-5001);
+  z-index: 2;
+}
+.background {
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 2px;
+  background-color: var(--color-white-solid);
+  z-index: 2;
+  flex-shrink: 0;
+}
+.item2 {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--padding-8) var(--padding-0) var(--padding-0) var(--padding-24);
+}
+.heading-32 {
+  margin: 0;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  line-height: var(--line-height-28);
+  font-weight: var(--font-weight-800);
+  font-family: inherit;
+}
+.item3,
+.section3 {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+}
+.item3 {
+  padding: var(--padding-0) var(--padding-0) var(--padding-0) var(--padding-24);
+}
+.section3 {
+  background-color: var(--color-grey-97);
+  justify-content: center;
+}
+.container17 {
+  flex: 1;
+  overflow: hidden;
+  padding: var(--padding-72) var(--padding-178);
+  box-sizing: border-box;
+  max-width: var(--width-1440);
+}
+.container17,
+.container18,
+.container19 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.container18 {
+  width: 100%;
+  max-width: var(--width-1084);
+}
+.container19 {
+  align-self: stretch;
+  padding: var(--padding-8) var(--padding-0) var(--padding-0);
+  gap: var(--item-spacing-40);
+  text-align: center;
+  font-size: var(--font-size-181);
+  color: var(--color-azure-25);
+  font-family: Manrope;
+}
+.follow-our-easy-container {
+  position: relative;
+  line-height: var(--line-height-26);
+}
+.follow-our {
+  font-weight: 500;
+}
+.easy-setup-guide {
+  color: var(--color-azure-57);
+}
+.easy-setup-guide2 {
+  font-weight: 600;
+}
+.list2 {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 0;
+  row-gap: var(--gap-20);
+  font-size: var(--item-spacing-s);
+  color: var(--color-grey-13);
+  font-family: var(--font-family-Font-1);
+}
+.item9 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  isolation: isolate;
+  gap: var(--item-spacing-7-5);
+  min-width: 203px;
+  max-width: 271px;
+}
+.background-icon {
+  width: var(--width-72);
+  height: var(--height-72);
+  border-radius: var(--br-36);
+  z-index: 0;
+  flex-shrink: 0;
+}
+.container21 {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1;
+  flex-shrink: 0;
+}
+.download {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: var(--font-size-34);
+  font-weight: var(--font-weight-700);
+  font-family: inherit;
+}
+.link-download-on-the-app-sto2 {
+  width: 143px;
+  height: 47.7px;
+  object-fit: cover;
+  cursor: pointer;
+  z-index: 2;
+  flex-shrink: 0;
+}
+.icon {
+  width: 124px;
+  height: var(--height-15);
+  position: absolute;
+  margin: 0 !important;
+  top: 51px;
+  left: 207px;
+  z-index: 3;
+  flex-shrink: 0;
+}
+.container23 {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 2;
+  flex-shrink: 0;
+  font-size: var(--font-size-18);
+  color: var(--color-azure-25);
+}
+.create-username {
+  position: relative;
+  line-height: var(--line-height-28);
+  font-weight: var(--font-weight-5001);
+}
+.item12 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--item-spacing-7-5);
+  min-width: 203px;
+  max-width: 271px;
+}
+.background-icon4 {
+  width: var(--width-72);
+  height: var(--height-72);
+  border-radius: var(--br-36);
+}
+.container27 {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: var(--font-size-18);
+  color: var(--color-azure-25);
+}
+.container28,
+.section4 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.section4 {
+  overflow: hidden;
+  align-items: flex-start;
+  padding: 96px var(--padding-178);
+  box-sizing: border-box;
+  max-width: var(--width-1440);
+}
+.container28 {
+  align-items: center;
+  gap: var(--item-spacing-xs);
+  max-width: var(--width-1084);
+}
+.div-classios-type-container {
+  width: var(--width-900);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--padding-8) var(--padding-0) var(--padding-0);
+  box-sizing: border-box;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-12);
+  color: var(--color-white-solid);
+  font-family: var(--font-family-Font-3);
+}
+.body,
+.youtube-video-player {
+  position: relative;
+  background-color: var(--color-black-solid);
+  overflow: hidden;
+}
+.body {
+  height: 500px;
+  width: var(--width-900);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  isolation: isolate;
+  max-width: 100%;
+}
+.youtube-video-player {
+  align-self: stretch;
+  flex: 1;
+  display: none;
+  z-index: 0;
+}
+.container30 {
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 100%;
+  z-index: 1;
+}
+.video-cover-icon {
+  height: 500px;
+  object-fit: cover;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.cued-overlay,
+.gradient,
+.video-cover-icon {
+  width: var(--width-900);
+  position: relative;
+}
+.cued-overlay {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 144px;
+  flex-shrink: 0;
+  max-width: 100%;
+  z-index: 2;
+  margin-top: -500px;
+}
+.gradient {
+  height: 70px;
+  background: linear-gradient(
+    180deg,
+    var(--color-black-80),
+    var(--color-black-60) 50%,
+    var(--color-black-0)
+  );
+}
+.button-play-video-wrapper {
+  width: var(--width-900);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--padding-0) var(--padding-20);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.button-play-video {
+  height: var(--height-72);
+  width: var(--width-72);
+}
+.container31 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: var(--padding-0) var(--padding-24) var(--padding-12)
+    var(--padding-14);
+  box-sizing: border-box;
+  position: relative;
+  isolation: isolate;
+  gap: 388px;
+  flex-shrink: 0;
+  max-width: 100%;
+  z-index: 3;
+  margin-top: -500px;
+}
+.gradient2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    180deg,
+    var(--color-black-60),
+    var(--color-black-54) 25%,
+    var(--color-black-36) 50%,
+    var(--color-black-18) 75%,
+    var(--color-black-0)
+  );
+  z-index: 0;
+  flex-shrink: 0;
+}
+.container32 {
+  width: 862px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  max-width: 100%;
+  z-index: 1;
+  flex-shrink: 0;
+}
+.embedded-player-video-details {
+  align-self: stretch;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.container33,
+.container34 {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.container33 {
+  align-self: stretch;
+  justify-content: center;
+  padding: var(--padding-0) var(--padding-12);
+  position: relative;
+  isolation: isolate;
+  min-height: var(--height-52);
+}
+.container34 {
+  flex: 1;
+  flex-direction: column;
+  padding: var(--padding-0) var(--padding-0) var(--padding-0) 52px;
+  min-height: var(--height-36);
+  z-index: 0;
+}
+.container34,
+.link-text,
+.linkmask-group-icon {
+  align-self: stretch;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.linkmask-group-icon {
+  height: 38px;
+  position: relative;
+  max-width: 100%;
+}
+.link-text {
+  height: 13.2px;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--padding-0) var(--padding-0) 0.2px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.mobicip-screen-time {
+  height: 14px;
+  width: 199.3px;
+  position: relative;
+  line-height: var(--line-height-13-2);
+  color: inherit;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+.container35 {
+  height: 52px;
+  margin: 0 !important;
+  position: absolute;
+  top: 8px;
+  left: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--padding-0) var(--padding-0) var(--padding-0) var(--padding-4);
+  box-sizing: border-box;
+  isolation: isolate;
+  min-width: var(--height-52);
+  max-width: var(--width-1428);
+  z-index: 1;
+  flex-shrink: 0;
+}
+.overlay {
+  flex: 1;
+  border-radius: 10px;
+  background-color: var(--color-black-801);
+  display: flex;
+  align-items: center;
+  padding: var(--padding-0) var(--padding-2) var(--padding-0) 52px;
+  opacity: 0;
+  z-index: 0;
+}
+.text {
+  height: 32px;
+  width: 8px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.button-thumbnail-image {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  margin: 0 !important;
+  top: 8px;
+  left: 12px;
+  border-radius: 18px;
+  object-fit: cover;
+  min-width: var(--width-1);
+  min-height: var(--width-1);
+  z-index: 1;
+}
+.container-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: var(--padding-0) 6px var(--padding-0) var(--padding-16);
+  box-sizing: border-box;
+  max-width: 100%;
+  z-index: 2;
+  flex-shrink: 0;
+  font-size: var(--font-size-181);
+}
+.container36 {
+  width: 840px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: var(--item-spacing-0);
+  max-width: 100%;
+}
+.margin,
+.overlay-icon {
+  height: var(--height-48);
+}
+.overlay-icon {
+  width: 56px;
+  border-radius: 48px;
+}
+.margin {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  min-width: 217px;
+}
+.container37 {
+  width: 217px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.container38 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-0) var(--padding-0) var(--padding-0) var(--padding-4);
+}
+.button-view-model-link-wat {
+  height: var(--height-48);
+  border-radius: 24px;
+  background-color: var(--color-black-30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-0) var(--padding-24);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.container39,
+.text2 {
+  display: flex;
+  align-items: flex-start;
+}
+.container39 {
+  overflow: hidden;
+  flex-direction: column;
+  padding: 13px var(--padding-0) var(--padding-14);
+}
+.text2 {
+  width: 165.4px;
+  height: 21px;
+  justify-content: flex-end;
+  padding: 2.3px var(--padding-0) var(--padding-0);
+  box-sizing: border-box;
+  position: relative;
+  isolation: isolate;
+}
+.watch-on {
+  height: var(--height-48);
+  width: 75.7px;
+  position: absolute;
+  margin: 0 !important;
+  top: -13.5px;
+  left: 0;
+  line-height: var(--line-height-48);
+  font-weight: var(--font-weight-100);
+  color: inherit;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  z-index: 0;
+  flex-shrink: 0;
+}
+.container40,
+.img-icon {
+  height: 20px;
+  width: 90px;
+  z-index: 1;
+  flex-shrink: 0;
+}
+.container40 {
+  width: 100%;
+  height: 228px;
+  margin: 0 !important;
+  position: absolute;
+  right: 0;
+  bottom: -228px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--padding-12);
+  box-sizing: border-box;
+  max-width: 100%;
+  z-index: 3;
+}
+.container41 {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: auto;
+}
+.container42,
+.section5 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.section5 {
+  overflow: hidden;
+  padding: var(--padding-0) var(--padding-178) var(--padding-64);
+  max-width: var(--width-1440);
+}
+.container42 {
+  padding: var(--padding-0) var(--padding-0) var(--padding-40);
+  max-width: var(--width-1084);
+}
+.container43,
+.container44,
+.margin2 {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+}
+.container43 {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 0 var(--item-spacing-13-3);
+}
+.container44,
+.margin2 {
+  flex-direction: column;
+}
+.margin2 {
+  width: 261px;
+  justify-content: center;
+  padding: var(--padding-20) var(--padding-0);
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--item-spacing-s);
+  color: var(--color-azure-19);
+  font-family: var(--font-family-Font-1);
+}
+.container44 {
+  flex: 1;
+  gap: var(--item-spacing-10);
+}
+.card-image-icon {
+  align-self: stretch;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.container45,
+.heading-39 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.heading-39 {
+  padding: var(--padding-0) var(--padding-0) var(--padding-8);
+}
+.keep-your-child {
+  align-self: stretch;
+  position: relative;
+}
+.container46 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: var(--font-size-181);
+  color: var(--color-azure-25);
+  font-family: var(--font-family-Font-11);
+}
+.mobicip-protects-your {
+  align-self: stretch;
+  position: relative;
+  line-height: var(--line-height-281);
+}
+.container56 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--item-spacing-s);
+  max-width: var(--width-1084);
+  text-align: center;
+  font-size: var(--font-size-34);
+  color: var(--color-grey-13);
+  font-family: var(--font-family-Font-1);
+}
+.list3 {
+  align-self: stretch;
+  padding: var(--padding-0) 376px;
+  gap: var(--item-spacing-m);
+}
+.item13,
+.list3 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.link2 {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.container-icon2 {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+.item14 {
+  display: flex;
+  align-items: center;
+  padding: 5px var(--padding-0);
+}
+.link3 {
+  height: 90px;
+  width: 200px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.mobicipcom-bbb-business-revie {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  object-fit: cover;
+}
+.container57,
+.margin6 {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 100%;
+}
+.container57 {
+  row-gap: var(--gap-20);
+  text-align: left;
+  font-size: var(--font-size-16);
+  color: var(--color-azure-63);
+  font-family: var(--font-family-Font-11);
+}
+.margin6 {
+  width: 361.3px;
+  flex-direction: column;
+  padding: var(--padding-12);
+  box-sizing: border-box;
+}
+.container58 {
+  width: 337.3px;
+  flex: 1;
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: 49px 288.3280029296875px;
+  grid-template-rows: 156px 24.234399795532227px 26.765600204467773px;
+}
+.container59,
+.margin7 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.margin7 {
+  justify-content: center;
+  padding: var(--padding-0) var(--padding-0) var(--padding-16);
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 6;
+  height: 156px;
+  font-size: var(--font-size-181);
+  color: var(--color-azure-25);
+}
+.container59 {
+  align-self: stretch;
+  flex: 1;
+}
+.container-icon3 {
+  width: var(--width-48);
+  max-height: 100%;
+  object-fit: cover;
+  grid-column: 1;
+  grid-row: 7 / span 2;
+}
+.container60,
+.margin8 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.margin8 {
+  justify-content: center;
+  padding: var(--padding-0) var(--padding-0) var(--padding-2);
+  grid-column: 2;
+  grid-row: 7;
+}
+.container60 {
+  align-self: stretch;
+  flex: 1;
+  padding: var(--padding-0) var(--padding-0) var(--padding-0) var(--padding-8);
+}
+.mark-peters-idaho {
+  align-self: stretch;
+  position: relative;
+  font-weight: var(--font-weight-500);
+}
+.margin9 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--padding-0) var(--padding-0) var(--padding-2);
+  grid-column: 2;
+  grid-row: 8;
+}
+.container61 {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.appstore,
+.container62 {
+  position: absolute;
+  display: flex;
+}
+.appstore {
+  top: 0;
+  left: 8px;
+  font-weight: var(--font-weight-500);
+  align-items: center;
+}
+.container62 {
+  top: 0.9px;
+  left: 90.2px;
+  align-items: flex-start;
+  padding: 6.4px var(--padding-4) 1.3px var(--padding-0);
+  gap: var(--item-spacing-7-2);
+}
+.container-icon4 {
+  height: var(--height-16);
+  width: var(--width-16_8);
+}
+.section6 {
+  align-self: stretch;
+  background-color: var(--color-azure-57);
+  justify-content: center;
+  text-align: center;
+  font-size: var(--font-size-20);
+  color: var(--color-white-solid);
+  font-family: var(--font-family-Font-1);
+}
+.container73,
+.container74,
+.section6 {
+  display: flex;
+  align-items: flex-start;
+}
+.container73 {
+  flex: 1;
+  overflow: hidden;
+  flex-direction: column;
+  padding: 48px var(--padding-178);
+  box-sizing: border-box;
+  max-width: var(--width-1440);
+}
+.container74 {
+  align-self: stretch;
+  padding: var(--padding-24) 55px;
+  gap: var(--item-spacing-111-8);
+}
+.container75,
+.container76 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container76 {
+  padding: var(--padding-12) var(--padding-0);
+}
+.kids-protected {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: var(--font-weight-700);
+  font-family: inherit;
+}
+.container77 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--font-size-44);
+}
+.icon-protections {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: var(--font-weight-800);
+  font-family: inherit;
+}
+.section7 {
+  width: 100%;
+  overflow: hidden;
+  padding: var(--padding-64) var(--padding-178) var(--padding-0);
+  box-sizing: border-box;
+  max-width: var(--width-1440);
+}
+.container84,
+.item15,
+.list4,
+.section7 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.container84 {
+  width: 100%;
+  gap: var(--item-spacing-40);
+  max-width: var(--width-1084);
+}
+.item15,
+.list4 {
+  max-width: 100%;
+}
+.list4 {
+  align-self: stretch;
+  height: 520px;
+  gap: var(--gap-24);
+}
+.item15 {
+  width: 1084px;
+  gap: var(--item-spacing-s);
+  text-align: center;
+  font-size: var(--item-spacing-s);
+  color: var(--color-grey-13);
+  font-family: var(--font-family-Font-1);
+}
+.what-is-a {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: var(--line-height-28);
+  font-weight: var(--font-weight-700);
+  font-family: inherit;
+}
+.container85 {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  font-size: var(--font-size-18);
+  color: var(--color-azure-25);
+}
+.a-parental-control {
+  flex: 1;
+  position: relative;
+  line-height: var(--line-height-28);
+  font-weight: var(--font-weight-5001);
+}
+.item-can,
+.item16 {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.item-can {
+  gap: var(--gap-24);
+  text-align: left;
+  font-size: var(--item-spacing-s);
+  color: var(--color-grey-13);
+  font-family: var(--font-family-Font-1);
+}
+.item16 {
+  width: 345.3px;
+  flex-direction: column;
+  gap: var(--item-spacing-s);
+}
+.can-i-monitor {
+  flex: 1;
+  position: relative;
+  line-height: var(--line-height-28);
+}
+.container86 {
+  align-self: stretch;
+  height: 252px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 170px var(--padding-0) var(--padding-0);
+  box-sizing: border-box;
+  position: relative;
+  isolation: isolate;
+  gap: 2px;
+  font-size: var(--font-size-18);
+  color: var(--color-azure-25);
+}
+.yes-you-can-container {
+  width: 324px;
+  height: 196px;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  left: 0;
+  line-height: var(--line-height-28);
+  font-weight: var(--font-weight-5001);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.yes-you-can-container2 {
+  width: 100%;
+}
+.link4,
+.operating-systems {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+.link4 {
+  height: 52px;
+  flex-direction: column;
+  padding: var(--padding-26) var(--padding-0);
+  z-index: 1;
+  color: var(--color-azure-57);
+}
+.operating-systems {
+  margin-top: -28px;
+  width: 335.7px;
+  padding: var(--padding-0) 10px var(--padding-0) 259px;
+}
+.windows {
+  height: var(--height-28);
+  width: 77px;
+  position: relative;
+  line-height: var(--line-height-28);
+  font-weight: var(--font-weight-5001);
+  color: inherit;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.device,
+.operating-systems2 {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.device {
+  height: var(--height-28);
+  width: 56px;
+  position: relative;
+  line-height: var(--line-height-28);
+  font-weight: var(--font-weight-5001);
+  color: inherit;
+  align-items: center;
+  text-decoration: none;
+}
+.or-chromebook-from-any-device-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-0) var(--padding-0) var(--padding-0) var(--padding-0);
+  color: var(--color-azure-25);
+}
+.of-their-choice,
+.or-chromebook-from-container {
+  height: var(--height-28);
+  position: relative;
+  line-height: var(--line-height-28);
+  font-weight: var(--font-weight-5001);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.or-chromebook-from-container {
+  margin-left: -0.6px;
+  width: 270px;
+  z-index: 2;
+}
+.of-their-choice {
+  width: 126.3px;
+}
+.container87,
+.container88 {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  font-size: var(--font-size-18);
+  color: var(--color-azure-25);
+}
+.container88 {
+  font-family: Manrope;
+}
+.mobicip-allows-parents-container {
+  flex: 1;
+  position: relative;
+  line-height: var(--line-height-28);
+}
+.section8,
+.youtube-parental-controls {
+  color: var(--color-grey-13);
+}
+.section8 {
+  align-self: stretch;
+  justify-content: center;
+  padding: var(--padding-64) var(--padding-0) var(--padding-0);
+  text-align: center;
+  font-size: var(--font-size-341);
+  font-family: var(--font-family-Font-11);
+}
+.container89,
+.section8 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.have-more-questions {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: var(--font-size-441);
+  font-weight: var(--font-weight-8001);
+  font-family: inherit;
+}
+.container90,
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.container90 {
+  align-items: flex-start;
+  padding: var(--padding-40) var(--padding-16) var(--padding-72);
+  box-sizing: border-box;
+  max-width: var(--width-720);
+  text-align: left;
+  font-size: var(--font-size-18);
+  color: var(--color-grey-46);
+  font-family: var(--font-family-Font-1);
+}
+.form {
+  align-items: center;
+  gap: var(--item-spacing-xs);
+  min-width: 688px;
+}
+.container91,
+.container92,
+.input {
+  display: flex;
+  align-items: flex-start;
+}
+.container91 {
+  align-self: stretch;
+  flex-direction: column;
+  padding: var(--padding-0) var(--padding-0) var(--padding-16);
+  gap: var(--item-spacing-s1);
+}
+.container92,
+.input {
+  overflow: hidden;
+}
+.input {
+  align-self: stretch;
+  height: var(--height-56);
+  box-shadow: var(--shadow-drop);
+  border-radius: var(--br-32);
+  background-color: var(--color-white-solid);
+  border: var(--width-1) solid var(--color-azure-89);
+  box-sizing: border-box;
+  flex-shrink: 0;
+  justify-content: center;
+  padding: 13px var(--padding-24);
+}
+.container92 {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  height: 25px;
+  flex: 1;
+  flex-direction: column;
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: var(--fs-18);
+  color: var(--color-grey-46);
+  min-width: 250px;
+  max-width: 100%;
+}
+.container95,
+.textarea {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.textarea {
+  align-self: stretch;
+  height: 120px;
+  box-shadow: var(--shadow-drop);
+  border-radius: var(--br-32);
+  background-color: var(--color-white-solid);
+  border: var(--width-1) solid var(--color-azure-89);
+  overflow: auto;
+  flex-shrink: 0;
+  justify-content: center;
+  padding: 17px var(--padding-24);
+}
+.container95 {
+  flex: 1;
+  flex-direction: column;
+  padding: var(--padding-0) var(--padding-0) 0.6px;
+  max-width: 100%;
+}
+.your-message {
+  align-self: stretch;
+  position: relative;
+  line-height: var(--line-height-21-6);
+  font-weight: var(--font-weight-5001);
+}
+.container96 {
+  width: 472px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--gap-20);
+  max-width: var(--width-472);
+}
+.backgroundborder {
+  cursor: pointer;
+  border: var(--stroke-weight-2) solid var(--color-azure-891);
+  padding: var(--padding-0) var(--padding-24);
+  background-color: var(--color-white-solid);
+  height: var(--height-56);
+  width: 220px;
+  border-radius: var(--br-32);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--width-144);
+}
+.backgroundborder:hover,
+.button:hover {
+  background-color: var(--color-gainsboro);
+  border: var(--stroke-weight-2) solid var(--color-lightsteelblue);
+  box-sizing: border-box;
+}
+.cancel {
+  position: relative;
+  font-size: var(--font-size-181);
+  line-height: var(--font-size-181);
+  font-family: var(--font-family-Font-11);
+  color: var(--color-azure-44);
+  text-align: center;
+}
+.button {
+  cursor: pointer;
+  border: var(--stroke-weight-2) solid var(--color-azure-57);
+  padding: var(--padding-0) var(--padding-24);
+  background-color: var(--color-white-solid);
+  height: var(--height-56);
+  width: 220px;
+  border-radius: var(--br-32);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--width-144);
+}
+.button:hover {
+  border: var(--stroke-weight-2) solid var(--color-cornflowerblue);
+}
+.submit {
+  position: relative;
+  font-size: 17.4px;
+  line-height: var(--font-size-18);
+  font-family: var(--font-family-Font-31);
+  color: var(--color-azure-57);
+  text-align: center;
+}
+.button-chat-button {
+  width: 55px;
+  height: 55px;
+  margin: 0 !important;
+  position: absolute;
+  right: 16px;
+  bottom: 5374.5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 27.5px;
+  background-color: var(--color-azure-57);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1;
+}
+.container-icon21 {
+  align-self: stretch;
+  flex: 1;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+@media screen and (max-width: 1410px) {
+  .end-google-tag-manager-noscri {
+    padding-top: 22px;
+    box-sizing: border-box;
+  }
+  .container10 {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .container11 {
+    flex: 1;
+  }
+  .list {
+    width: 100%;
+  }
+  .container35 {
+    max-width: 100%;
+  }
+  .list3 {
+    flex-wrap: wrap;
+  }
+  .item13,
+  .item14 {
+    flex: 1;
+  }
+  .container57,
+  .container74 {
+    flex-wrap: wrap;
+  }
+  .list4 {
+    height: auto;
+  }
+  .item-can {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .container8 {
+    max-width: 100%;
+  }
+  .container11,
+  .list {
+    min-width: 100%;
+  }
+  .container18 {
+    max-width: 100%;
+  }
+  .list2 {
+    justify-content: center;
+  }
+  .container28 {
+    max-width: 100%;
+  }
+  .body {
+    min-height: 500px;
+  }
+  .body,
+  .container30 {
+    height: auto;
+  }
+  .cued-overlay {
+    gap: 72px;
+  }
+  .container31 {
+    gap: 194px;
+  }
+  .container34 {
+    padding-left: var(--padding-26);
+    box-sizing: border-box;
+  }
+  .container35 {
+    max-width: 100%;
+  }
+  .section5 {
+    padding-bottom: 42px;
+    box-sizing: border-box;
+  }
+  .container42,
+  .container56 {
+    max-width: 100%;
+  }
+  .container74,
+  .list3 {
+    padding-left: 188px;
+    padding-right: 188px;
+    box-sizing: border-box;
+  }
+  .container74 {
+    gap: 56px;
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+  .container84 {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 825px) {
+  .end-google-tag-manager-noscri {
+    padding-top: var(--padding-20);
+    box-sizing: border-box;
+  }
+  .container2 {
+    padding: 42px var(--padding-89) var(--padding-20);
+    box-sizing: border-box;
+  }
+  .container4 {
+    max-width: 100%;
+  }
+  .parental-control-app {
+    font-size: 35px;
+    line-height: 48px;
+  }
+  .container7 {
+    padding: 47px var(--padding-89);
+    box-sizing: border-box;
+  }
+  .features-of-our {
+    font-size: var(--fs-27);
+    line-height: var(--lh-35);
+  }
+  .container17 {
+    padding-left: var(--padding-89);
+    padding-right: var(--padding-89);
+    box-sizing: border-box;
+  }
+  .container19 {
+    gap: var(--gap-20);
+  }
+  .section4 {
+    padding: 62px var(--padding-89);
+    box-sizing: border-box;
+  }
+  .container35 {
+    max-width: 100%;
+  }
+  .section5 {
+    padding-left: var(--padding-89);
+    padding-right: var(--padding-89);
+    padding-bottom: 27px;
+  }
+  .container73,
+  .list3,
+  .section5 {
+    box-sizing: border-box;
+  }
+  .list3 {
+    gap: 16px;
+    padding-left: 94px;
+    padding-right: 94px;
+  }
+  .container73 {
+    padding-left: var(--padding-89);
+    padding-right: var(--padding-89);
+  }
+  .container74 {
+    gap: 28px;
+  }
+  .icon-protections {
+    font-size: 35px;
+  }
+  .section7 {
+    padding-left: var(--padding-89);
+    padding-top: 42px;
+    padding-right: var(--padding-89);
+    box-sizing: border-box;
+  }
+  .container84 {
+    gap: var(--gap-20);
+  }
+  .section8 {
+    padding-top: 42px;
+    box-sizing: border-box;
+  }
+  .have-more-questions {
+    font-size: var(--fs-27);
+    line-height: var(--lh-35);
+  }
+  .container90 {
+    padding-top: var(--padding-26);
+    padding-bottom: 47px;
+    box-sizing: border-box;
+  }
+  .container90,
+  .container96 {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .container2 {
+    padding-left: var(--padding-20);
+    padding-right: var(--padding-20);
+    box-sizing: border-box;
+  }
+  .parental-control-app {
+    font-size: var(--fs-26);
+    line-height: 36px;
+  }
+  .container5 {
+    max-width: 100%;
+  }
+  .container7 {
+    padding: 31px var(--padding-20);
+    box-sizing: border-box;
+  }
+  .features-of-our {
+    font-size: var(--fs-20);
+    line-height: var(--lh-26);
+  }
+  .list {
+    max-width: 100%;
+  }
+  .heading-3 {
+    font-size: var(--fs-19);
+    line-height: var(--lh-22);
+  }
+  .container16 {
+    height: auto;
+  }
+  .frame-parent {
+    flex-wrap: wrap;
+  }
+  .heading-32 {
+    font-size: var(--fs-19);
+    line-height: var(--lh-22);
+  }
+  .container17 {
+    padding: 47px var(--padding-20);
+    box-sizing: border-box;
+  }
+  .download {
+    font-size: var(--fs-19);
+    line-height: 27px;
+  }
+  .section4 {
+    padding: var(--padding-40) var(--padding-20);
+    box-sizing: border-box;
+  }
+  .cued-overlay {
+    gap: 36px;
+  }
+  .container31 {
+    gap: 97px;
+  }
+  .container35 {
+    max-width: 100%;
+  }
+  .section5 {
+    padding-left: var(--padding-20);
+    padding-right: var(--padding-20);
+    box-sizing: border-box;
+  }
+  .keep-your-child {
+    font-size: var(--fs-19);
+  }
+  .container73,
+  .list3 {
+    padding-left: var(--padding-20);
+    padding-right: var(--padding-20);
+    box-sizing: border-box;
+  }
+  .kids-protected {
+    font-size: var(--fs-16);
+  }
+  .icon-protections {
+    font-size: var(--fs-26);
+  }
+  .section7 {
+    padding-left: var(--padding-20);
+    padding-right: var(--padding-20);
+    box-sizing: border-box;
+  }
+  .can-i-monitor,
+  .what-is-a {
+    font-size: var(--fs-19);
+    line-height: var(--lh-22);
+  }
+  .operating-systems {
+    padding-left: var(--padding-20);
+    box-sizing: border-box;
+  }
+  .have-more-questions {
+    font-size: var(--fs-20);
+    line-height: var(--lh-26);
+  }
+}
+
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="w-light">
+      <main class="end-google-tag-manager-noscri">
+        <section class="container">
+          <div class="section">
+            <div class="container2">
+              <div class="container3">
+                <div class="container4">
+                  <div class="heading-1">
+                    <h1 class="parental-control-app">
+                      Parental Control App<br />for iPhone
+                    </h1>
+                  </div>
+                  <div class="container5">
+                    <div class="comprehensive-iphone-parental">
+                      Comprehensive iPhone parental controls for busy,<br />tech-savvy
+                      parents of young children
+                    </div>
+                  </div>
+                  <div class="container6">
+                    <button class="link">
+                      <a
+                        class="start-free-trial"
+                        href="https://mobicip.com/pricing"
+                        target="_blank"
+                        >Start Free Trial</a
+                      >
+                    </button>
+                  </div>
+                  <div
+                    class="link-download-on-the-app-sto"
+                    id="linkDownloadOnTheAppSto"
+                  >
+                    <img
+                      class="picture-download-on-the-app"
+                      alt=""
+                      src="https://media.mobicip.com/wp-content/uploads/2026/04/09063405/cd8d163f3299cf853f53c0d7cd15514b30e7085a.png"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section2">
+            <div class="container7">
+              <div class="container8">
+                <div class="heading-2">
+                  <h2 class="features-of-our">
+                    Features of our iPhone Parental Control App
+                  </h2>
+                </div>
+                <div class="container9">
+                  <div class="easy-for-parents">
+                    Easy for parents to monitor their child's activities on
+                    their iPhones and keep them protected from any harm.
+                  </div>
+                </div>
+                <div class="container10">
+                  <section class="container11">
+                    <div class="heading-2">
+                      <img
+                        class="container-icon"
+                        loading="lazy"
+                        alt=""
+                        src="https://media.mobicip.com/wp-content/uploads/2026/04/09063605/1a9b923b0f33bcbd1cd16afa274e1fa81cdbd89b.png"
+                      />
+                    </div>
+                  </section>
+                  <section class="list">
+                    <div class="item">
+                      <h3 class="heading-3">Track Location</h3>
+                      <div class="container13">
+                        <div class="container14">
+                          <div class="instantly-track-your">
+                            Instantly track your family's location using the<br />Family
+                            Locator
+                          </div>
+                        </div>
+                        <div class="container15">
+                          <div class="share-your-real-time">
+                            Share your real-time location with your loved ones
+                          </div>
+                        </div>
+                        <div class="container16">
+                          <div class="link-strong" id="linkStrong">
+                            <div class="frame-parent">
+                              <div
+                                class="set-geofences-to-stay-within-a-wrapper"
+                              >
+                                <div class="set-geofences-to">
+                                  Set Geofences to stay within a
+                                </div>
+                              </div>
+                              <a
+                                class="safe-location"
+                                href="https://webs.prgr.in/features/family-locator"
+                                target="_blank"
+                                >safe location</a
+                              >
+                            </div>
+                            <div class="boundary-parent">
+                              <a
+                                class="boundary"
+                                href="https://webs.prgr.in/features/family-locator"
+                                target="_blank"
+                                >boundary</a
+                              >
+                              <div
+                                class="set-geofences-to-stay-within-a-wrapper"
+                              >
+                                <div class="and-receive-instant">
+                                  and receive instant alerts
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="background"></div>
+                    </div>
+                    <div class="item2">
+                      <h3 class="heading-32">Monitor Social Media</h3>
+                    </div>
+                    <div class="item3">
+                      <h3 class="heading-32">Filter Web Content</h3>
+                    </div>
+                    <div class="item3">
+                      <h3 class="heading-32">Block Apps</h3>
+                    </div>
+                    <div class="item3">
+                      <h3 class="heading-32">Set App Limits</h3>
+                    </div>
+                    <div class="item3">
+                      <h3 class="heading-32">View Daily Activity Summary</h3>
+                    </div>
+                    <div class="item3">
+                      <h3 class="heading-32">Teach Self-Regulation</h3>
+                    </div>
+                    <div class="item3">
+                      <h3 class="heading-32">Uninstall Protection</h3>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section3">
+            <div class="container17">
+              <div class="container18">
+                <div class="heading-2">
+                  <h2 class="features-of-our">
+                    How to Set Up Mobicip’s iPhone Parental Control
+                  </h2>
+                </div>
+                <section class="container19">
+                  <div class="heading-2">
+                    <div class="follow-our-easy-container">
+                      <span class="follow-our">Follow our </span>
+                      <a
+                        class="easy-setup-guide"
+                        href="https://webs.prgr.in/support/article/mobicip-parental-controls-setup-iphone-ipad"
+                        target="_blank"
+                      >
+                        <span class="easy-setup-guide2">easy setup guide</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="list2">
+                    <div class="item9">
+                      <img
+                        class="background-icon"
+                        loading="lazy"
+                        alt=""
+                        src="./public/Background.svg"
+                      />
+
+                      <div class="container21">
+                        <h3 class="download">Download</h3>
+                      </div>
+                      <img
+                        class="link-download-on-the-app-sto2"
+                        loading="lazy"
+                        alt=""
+                        src="./public/Link-Download-on-the-App-Store@2x.png"
+                        id="linkDownloadOnTheAppSto"
+                      />
+
+                      <img
+                        class="icon"
+                        loading="lazy"
+                        alt=""
+                        src="./public/Icon.svg"
+                      />
+                    </div>
+                    <div class="item9">
+                      <img
+                        class="background-icon"
+                        loading="lazy"
+                        alt=""
+                        src="./public/Background1.svg"
+                      />
+
+                      <div class="container21">
+                        <h3 class="download">Sign Up</h3>
+                      </div>
+                      <div class="container23">
+                        <div class="create-username">
+                          Create username &<br />password
+                        </div>
+                      </div>
+                      <img
+                        class="icon"
+                        loading="lazy"
+                        alt=""
+                        src="./public/Icon.svg"
+                      />
+                    </div>
+                    <div class="item9">
+                      <img
+                        class="background-icon"
+                        loading="lazy"
+                        alt=""
+                        src="./public/Background2.svg"
+                      />
+
+                      <div class="container21">
+                        <h3 class="download">Configure</h3>
+                      </div>
+                      <div class="container23">
+                        <div class="create-username">
+                          Setup your<br />family devices
+                        </div>
+                      </div>
+                      <img class="icon" alt="" src="./public/Icon.svg" />
+                    </div>
+                    <div class="item12">
+                      <img
+                        class="background-icon4"
+                        loading="lazy"
+                        alt=""
+                        src="./public/Background3.svg"
+                      />
+
+                      <div class="heading-2">
+                        <h3 class="download">Monitor</h3>
+                      </div>
+                      <div class="container27">
+                        <div class="create-username">
+                          Monitor online<br />activity
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="section4">
+            <div class="container28">
+              <div class="heading-2">
+                <h2 class="features-of-our">
+                  iPhone Parental Controls Installation Video
+                </h2>
+              </div>
+              <div class="container9">
+                <div class="easy-for-parents">
+                  Mobicip - #1 Rated Parental Controls for Apple iPhone
+                </div>
+              </div>
+              <section class="div-classios-type-container">
+                <div class="body">
+                  <div class="youtube-video-player"></div>
+                  <div class="container30">
+                    <img
+                      class="video-cover-icon"
+                      alt=""
+                      src="./public/video-cover@2x.png"
+                    />
+
+                    <div class="cued-overlay">
+                      <div class="gradient"></div>
+                      <div class="button-play-video-wrapper">
+                        <img
+                          class="button-play-video"
+                          loading="lazy"
+                          alt=""
+                          src="./public/Button-Play-video.svg"
+                        />
+                      </div>
+                    </div>
+                    <div class="container31">
+                      <div class="gradient2"></div>
+                      <div class="container32">
+                        <div class="embedded-player-video-details">
+                          <div class="container33">
+                            <div class="container34">
+                              <img
+                                class="linkmask-group-icon"
+                                loading="lazy"
+                                alt=""
+                                src="./public/Link-mask-group.svg"
+                              />
+
+                              <div class="link-text" id="linkText">
+                                <a
+                                  class="mobicip-screen-time"
+                                  href="https://www.youtube.com/channel/UC7TMZ1H5TTGxXWar0yAkKuQ"
+                                  target="_blank"
+                                  >Mobicip: Screen Time & Online Safety</a
+                                >
+                              </div>
+                            </div>
+                            <div class="container35">
+                              <div class="overlay">
+                                <div class="text"></div>
+                              </div>
+                              <img
+                                class="button-thumbnail-image"
+                                alt=""
+                                src="./public/Button-thumbnail-image@2x.png"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="container-wrapper">
+                        <div class="container36">
+                          <img
+                            class="overlay-icon"
+                            loading="lazy"
+                            alt=""
+                            src="./public/Overlay.svg"
+                          />
+
+                          <div class="margin">
+                            <div class="container37">
+                              <div class="container38">
+                                <div
+                                  class="button-view-model-link-wat"
+                                  id="buttonViewModelLinkWat"
+                                >
+                                  <div class="container39">
+                                    <div class="text2">
+                                      <a
+                                        class="watch-on"
+                                        href="https://www.youtube.com/watch"
+                                        target="_blank"
+                                        >Watch on</a
+                                      >
+                                      <img
+                                        class="img-icon"
+                                        alt=""
+                                        src="./public/Img.svg"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="container40">
+                        <div class="container41"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="section5">
+            <div class="container42">
+              <div class="heading-2">
+                <h2 class="features-of-our">
+                  Why Mobicip Parental Control App for Your Child’s iPhone?
+                </h2>
+              </div>
+              <div class="container43">
+                <section class="margin2">
+                  <div class="container44">
+                    <img
+                      class="card-image-icon"
+                      loading="lazy"
+                      alt=""
+                      src="./public/Card-Image@2x.png"
+                    />
+
+                    <div class="container45">
+                      <div class="heading-39">
+                        <b class="keep-your-child"
+                          >Keep your child safe<br />anytime, anywhere.</b
+                        >
+                      </div>
+                      <div class="container46">
+                        <div class="mobicip-protects-your">
+                          Mobicip protects your child<br />from cyberbullying
+                          and other<br />forms of online abuse by<br />filtering
+                          and blocking<br />inappropriate content and<br />social
+                          media conversations.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="margin2">
+                  <div class="container44">
+                    <img
+                      class="card-image-icon"
+                      loading="lazy"
+                      alt=""
+                      src="./public/Card-Image1@2x.png"
+                    />
+
+                    <div class="container45">
+                      <div class="heading-39">
+                        <b class="keep-your-child"
+                          >Remotely monitor<br />online activities.</b
+                        >
+                      </div>
+                      <div class="container46">
+                        <div class="mobicip-protects-your">
+                          Remotely manage your child's<br />online activities
+                          using powerful<br />monitoring features. Address<br />potential
+                          risks or behavioral<br />concerns using an
+                          intuitive<br />dashboard with real-time<br />insights.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="margin2">
+                  <div class="container44">
+                    <img
+                      class="card-image-icon"
+                      loading="lazy"
+                      alt=""
+                      src="./public/Card-Image2@2x.png"
+                    />
+
+                    <div class="container45">
+                      <div class="heading-39">
+                        <b class="keep-your-child"
+                          >Build healthy digital<br />habits.</b
+                        >
+                      </div>
+                      <div class="container46">
+                        <div class="mobicip-protects-your">
+                          Mobicip provides customizable<br />web filters as well
+                          as age-<br />appropriate browsing options.<br />Set up
+                          your child's internet<br />access based on age and<br />maturity
+                          level to ensure a<br />balanced digital lifestyle.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="margin2">
+                  <div class="container44">
+                    <img
+                      class="card-image-icon"
+                      loading="lazy"
+                      alt=""
+                      src="./public/Card-Image3@2x.png"
+                    />
+
+                    <div class="container45">
+                      <div class="heading-39">
+                        <b class="keep-your-child"
+                          >#1 Preferred Parental<br />Control on the iOS.</b
+                        >
+                      </div>
+                      <div class="container46">
+                        <div class="mobicip-protects-your">
+                          Most reliable parental control<br />app available on
+                          the iOS app<br />store with regular updates on<br />Apple’s
+                          constantly changing<br />screen time and parental<br />control
+                          features.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <section class="container56">
+              <div class="heading-2">
+                <h2 class="features-of-our">
+                  Voted #1 Parent-Approved and Top Rated
+                </h2>
+              </div>
+              <div class="list3">
+                <div class="item13">
+                  <div class="link2" id="linkContainer">
+                    <img
+                      class="container-icon2"
+                      loading="lazy"
+                      alt=""
+                      src="./public/Container@2x.png"
+                    />
+                  </div>
+                </div>
+                <div class="item14">
+                  <div class="link3" id="linkContainer">
+                    <img
+                      class="mobicipcom-bbb-business-revie"
+                      alt=""
+                      src="./public/Mobicip-com-BBB-Business-Review@2x.png"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="container57">
+                <div class="margin6">
+                  <div class="container58">
+                    <div class="margin7">
+                      <div class="container59">
+                        <div class="mobicip-protects-your">
+                          I've been using Mobicip for a few years<br />now to
+                          filter web content on my<br />children's iPhones and
+                          overall I've been<br />pleased. It's very easy to use
+                          and gets<br />the job done.
+                        </div>
+                      </div>
+                    </div>
+                    <img
+                      class="container-icon3"
+                      loading="lazy"
+                      alt=""
+                      src="./public/Container@2x.png"
+                    />
+
+                    <div class="margin8">
+                      <div class="container60">
+                        <div class="mark-peters-idaho">Mark Peters, Idaho</div>
+                      </div>
+                    </div>
+                    <div class="margin9">
+                      <div class="container61">
+                        <div class="appstore">Appstore</div>
+                        <div class="container62">
+                          <img
+                            class="container-icon4"
+                            alt=""
+                            src="./public/Container1.svg"
+                          />
+
+                          <img
+                            class="container-icon4"
+                            alt=""
+                            src="./public/Container1.svg"
+                          />
+
+                          <img
+                            class="container-icon4"
+                            alt=""
+                            src="./public/Container1.svg"
+                          />
+
+                          <img
+                            class="container-icon4"
+                            alt=""
+                            src="./public/Container1.svg"
+                          />
+
+                          <img
+                            class="container-icon4"
+                            alt=""
+                            src="./public/Container1.svg"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="margin6">
+                  <div class="container58">
+                    <div class="margin7">
+                      <div class="container59">
+                        <div class="mobicip-protects-your">
+                          Mobicip is the best coverage you can<br />have for
+                          your family. I receive weekly<br />emails, detailing
+                          my kids activities, and<br />even get notified when
+                          they try to add<br />an app.
+                        </div>
+                      </div>
+                    </div>
+                    <img
+                      class="container-icon3"
+                      loading="lazy"
+                      alt=""
+                      src="./public/Container@2x.png"
+                    />
+
+                    <div class="margin8">
+                      <div class="container60">
+                        <div class="mark-peters-idaho">
+                          Diana Wright, Edinburgh
+                        </div>
+                      </div>
+                    </div>
+                    <div class="margin9">
+                      <div class="container61">
+                        <div class="appstore">Appstore</div>
+                        <div class="container62">
+                          <img
+                            class="container-icon4"
+                            alt=""
+                            src="./public/Container1.svg"
+                          />
+
+                          <img
+                            class="container-icon4"
+                            alt=""
+                            src="./public/Container1.svg"
+                          />
+
+                          <img
+                            class="container-icon4"
+                            alt=""
+                            src="./public/Container1.svg"
+                          />
+
+                          <img
+                            class="container-icon4"
+                            alt=""
+                            src="./public/Container1.svg"
+                          />
+
+                          <img
+                            class="container-icon4"
+                            alt=""
+                            src="./public/Container1.svg"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="margin6">
+                  <div class="container58">
+                    <div class="margin7">
+                      <div class="container59">
+                        <div class="mobicip-protects-your">
+                          We used Mobicip for quite a few years<br />while our
+                          kids were getting "introduced"<br />to technology.
+                          Mobicip served its<br />purpose and helped us teach
+                          our kids<br />proper use of the internet.
+                        </div>
+                      </div>
+                    </div>
+                    <img
+                      class="container-icon3"
+                      alt=""
+                      src="./public/Container@2x.png"
+                    />
+
+                    <div class="margin8">
+                      <div class="container60">
+                        <div class="mark-peters-idaho">
+                          Jane Thomson, California
+                        </div>
+                      </div>
+                    </div>
+                    <div class="margin9">
+                      <div class="container61">
+                        <div class="appstore">Appstore</div>
+                        <div class="container62">
+                          <img
+                            class="container-icon4"
+                            alt=""
+                            src="./public/Container1.svg"
+                          />
+
+                          <img
+                            class="container-icon4"
+                            alt=""
+                            src="./public/Container1.svg"
+                          />
+
+                          <img
+                            class="container-icon4"
+                            alt=""
+                            src="./public/Container1.svg"
+                          />
+
+                          <img
+                            class="container-icon4"
+                            alt=""
+                            src="./public/Container1.svg"
+                          />
+
+                          <img
+                            class="container-icon4"
+                            alt=""
+                            src="./public/Container1.svg"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <section class="section6">
+            <div class="container73">
+              <div class="container74">
+                <div class="container75">
+                  <img
+                    class="button-play-video"
+                    loading="lazy"
+                    alt=""
+                    src="./public/Kids-Protected.svg"
+                  />
+
+                  <div class="container76">
+                    <h3 class="kids-protected">Kids Protected</h3>
+                  </div>
+                  <div class="container77">
+                    <h1 class="icon-protections">2,000,000 +</h1>
+                  </div>
+                </div>
+                <div class="container75">
+                  <img
+                    class="button-play-video"
+                    loading="lazy"
+                    alt=""
+                    src="./public/Apps-Blocked.svg"
+                  />
+
+                  <div class="container76">
+                    <h3 class="kids-protected">Apps Blocked</h3>
+                  </div>
+                  <div class="container77">
+                    <h2 class="icon-protections">260,000 +</h2>
+                  </div>
+                </div>
+                <div class="container75">
+                  <img
+                    class="button-play-video"
+                    loading="lazy"
+                    alt=""
+                    src="./public/Harmful-Websites-Blocked.svg"
+                  />
+
+                  <div class="container76">
+                    <h3 class="kids-protected">Harmful Websites Blocked</h3>
+                  </div>
+                  <div class="container77">
+                    <h2 class="icon-protections">3,300,000 +</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="section7">
+            <div class="container84">
+              <div class="heading-2">
+                <h2 class="features-of-our">
+                  The Best Parental Control App for Apple Devices
+                </h2>
+              </div>
+              <div class="list4">
+                <section class="item15">
+                  <div class="heading-2">
+                    <h3 class="what-is-a">
+                      What is a parental control app for the iPhone?
+                    </h3>
+                  </div>
+                  <div class="container85">
+                    <div class="a-parental-control">
+                      A parental control app for iPhone is a software that
+                      parents use to monitor their child's online activities and
+                      manage within<br />healthy limits. It typically includes
+                      features such as app blocking, web filtering, screen time
+                      limits, location tracking, and social<br />media
+                      monitoring.
+                    </div>
+                  </div>
+                </section>
+                <section class="item-can">
+                  <div class="item16">
+                    <div class="heading-1">
+                      <b class="can-i-monitor"
+                        >Can I monitor an iPhone from<br />my Android device?</b
+                      >
+                    </div>
+                    <div class="container86">
+                      <div class="yes-you-can-container">
+                        <span class="yes-you-can-container2">
+                          <span
+                            >Yes, you can. First, set up Mobicip in<br />Parent
+                            Mode on your
+                          </span>
+                          <a
+                            class="easy-setup-guide"
+                            href="https://www.mobicip.com/parental-controls/android"
+                            target="_blank"
+                          >
+                            <span>Android device</span>
+                          </a>
+                          <span
+                            >,<br />then set up Mobicip in Child Mode on<br />your
+                            child's iPhone. With Mobicip<br />parental controls,
+                            parents can monitor<br />their child's iPhone,
+                          </span>
+                          <a
+                            class="easy-setup-guide"
+                            href="https://www.mobicip.com/parental-controls/ios-ipad"
+                            target="_blank"
+                          >
+                            <span>iPad</span>
+                          </a>
+                          <span>, </span>
+                          <a
+                            class="easy-setup-guide"
+                            href="https://www.mobicip.com/parental-controls/android"
+                            target="_blank"
+                          >
+                            <span>Android<br /></span>
+                          </a>
+                          <span>phone/tablet, </span>
+                          <a
+                            class="easy-setup-guide"
+                            href="https://www.mobicip.com/parental-controls/kindle-fire"
+                            target="_blank"
+                          >
+                            <span>Kindle Fire</span>
+                          </a>
+                          <span>, </span>
+                          <a
+                            class="easy-setup-guide"
+                            href="https://www.mobicip.com/parental-controls/mac"
+                            target="_blank"
+                          >
+                            <span>Mac</span>
+                          </a>
+                          <span>, </span>
+                        </span>
+                      </div>
+                      <div class="link4">
+                        <div class="operating-systems">
+                          <a
+                            class="windows"
+                            href="https://www.mobicip.com/parental-controls/windows"
+                            target="_blank"
+                            >Windows</a
+                          >
+                        </div>
+                        <div class="operating-systems2">
+                          <a
+                            class="device"
+                            href="https://www.mobicip.com/parental-controls/windows"
+                            target="_blank"
+                            >device</a
+                          >
+                          <div class="or-chromebook-from-any-device-wrapper">
+                            <div class="or-chromebook-from-container">
+                              <span class="yes-you-can-container2">
+                                <span> or </span>
+                                <a
+                                  class="easy-setup-guide"
+                                  href="https://www.mobicip.com/parental-controls/chromebook"
+                                  target="_blank"
+                                >
+                                  <span>Chromebook</span>
+                                </a>
+                                <span> from any device</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="of-their-choice">of their choice.</div>
+                    </div>
+                  </div>
+                  <div class="item16">
+                    <div class="heading-1">
+                      <b class="can-i-monitor"
+                        >Can my child uninstall<br />Mobicip from iOS
+                        devices?</b
+                      >
+                    </div>
+                    <div class="container87">
+                      <div class="a-parental-control">
+                        While most parental control apps can be<br />uninstalled
+                        or disabled, Mobicip offers an<br />extra layer of
+                        protection. Uninstall<br />Protection requires a
+                        parent's iTunes<br />credentials to remove the app,
+                        making it<br />more difficult for children to bypass<br />parental
+                        controls.This added security<br />feature gives parents
+                        peace of mind<br />knowing their child's safety is
+                        not<br />compromised.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item16">
+                    <div class="heading-1">
+                      <b class="can-i-monitor"
+                        >Does Mobicip block videos on<br />the YouTube app?</b
+                      >
+                    </div>
+                    <div class="container88">
+                      <div class="mobicip-allows-parents-container">
+                        <span class="follow-our"
+                          >Mobicip allows parents to filter videos,<br />block
+                          inappropriate video content and<br />set
+                        </span>
+                        <b class="youtube-parental-controls"
+                          >YouTube parental controls</b
+                        >
+                        <span class="follow-our">
+                          on the<br />iPhone. The latest version of Mobicip<br />works
+                          using VPN technology that allows<br />it to filter
+                          videos directly on the Youtube<br />app. In addition,
+                          Mobicip already filters<br />videos on the YouTube
+                          website.</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+          <footer class="section8">
+            <div class="container89">
+              <h2 class="have-more-questions">Have more questions ?</h2>
+            </div>
+            <section class="container90">
+              <div class="form">
+                <div class="container91">
+                  <div class="input">
+                    <input
+                      class="container92"
+                      placeholder="Name*"
+                      type="text"
+                    />
+                  </div>
+                  <div class="input">
+                    <input
+                      class="container92"
+                      placeholder="Email*"
+                      type="text"
+                    />
+                  </div>
+                  <div class="input">
+                    <input
+                      class="container92"
+                      placeholder="Subject*"
+                      type="text"
+                    />
+                  </div>
+                  <div class="textarea">
+                    <div class="container95">
+                      <div class="your-message">Your message*</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="container96">
+                  <button class="backgroundborder">
+                    <b class="cancel">Cancel</b>
+                  </button>
+                  <button class="button">
+                    <b class="submit">Submit</b>
+                  </button>
+                </div>
+              </div>
+            </section>
+          </footer>
+        </section>
+      </main>
+      <div class="button-chat-button">
+        <img class="container-icon21" alt="" src="./public/Container@2x.png" />
+      </div>
+    </div>
+
+    <script>
+      var linkDownloadOnTheAppSto = document.getElementById(
+        "linkDownloadOnTheAppSto"
+      );
+      if (linkDownloadOnTheAppSto) {
+        linkDownloadOnTheAppSto.addEventListener("click", function () {
+          window.open(
+            "https://apps.apple.com/us/app/parental-control-app-mobicip/id299153586"
+          );
+        });
+      }
+      
+      var linkStrong = document.getElementById("linkStrong");
+      if (linkStrong) {
+        linkStrong.addEventListener("click", function () {
+          window.open("https://webs.prgr.in/features/family-locator");
+        });
+      }
+      
+      var linkText = document.getElementById("linkText");
+      if (linkText) {
+        linkText.addEventListener("click", function () {
+          window.open("https://www.youtube.com/channel/UC7TMZ1H5TTGxXWar0yAkKuQ");
+        });
+      }
+      
+      var buttonViewModelLinkWat = document.getElementById("buttonViewModelLinkWat");
+      if (buttonViewModelLinkWat) {
+        buttonViewModelLinkWat.addEventListener("click", function () {
+          window.open("https://www.youtube.com/watch");
+        });
+      }
+      
+      var linkContainer = document.getElementById("linkContainer");
+      if (linkContainer) {
+        linkContainer.addEventListener("click", function () {
+          window.open("https://store.momschoiceawards.com/product/10310");
+        });
+      }
+      
+      var linkContainer = document.getElementById("linkContainer");
+      if (linkContainer) {
+        linkContainer.addEventListener("click", function () {
+          window.open(
+            "https://www.bbb.org/us/ca/newbury-park/profile/internet-service/mobicipcom-1236-92007842/#sealclick"
+          );
+        });
+      }
+      </script>
+  </body>
+</html>
