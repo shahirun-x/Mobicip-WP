@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mobicip Collaboration - Share parenting duties with trusted partners and guardians. Manage your family's digital experience together.">
+  <title>Mobicip Collaboration - Parental Control Collaboration Features</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ===================== BASE STYLES ===================== */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      color: #1f2024;
+      background-color: #ffffff;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===================== ANIMATION ===================== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===================== HERO / BANNER SECTION ===================== */
+    .hero-banner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      gap: 152px;
+      padding: 60px 178px 48px;
+    }
+
+    /* -- Side Navigation -- */
+    .side-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+      width: 270px;
+    }
+
+    .side-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      border-radius: 8px;
+    }
+
+    .side-nav-item:hover {
+      background-color: #f0f4f8;
+      padding-left: 8px;
+    }
+
+    .side-nav-item .nav-icon {
+      width: 28px;
+      height: 27px;
+      color: #929cab;
+      flex-shrink: 0;
+    }
+
+    .side-nav-item .nav-label {
+      font-size: 18px;
+      font-weight: 700;
+      color: #383e48;
+    }
+
+    .side-nav-item.active {
+      background-color: #eef4fc;
+      padding-left: 8px;
+      position: relative;
+    }
+
+    .side-nav-item.active::before {
+      content: '';
+      position: absolute;
+      left: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 56px;
+      background-color: #3188f4;
+      border-radius: 2px;
+    }
+
+    .side-nav-item.active .nav-icon {
+      color: #3188f4;
+    }
+
+    .side-nav-item.active .nav-label {
+      color: #3188f4;
+    }
+
+    /* -- Hero Content -- */
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding-top: 80px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 800;
+      color: #1f2024;
+      border: 2px solid #1f2024;
+      padding: 4px 12px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      width: fit-content;
+      -webkit-text-stroke-color: #1f2024;
+      -webkit-text-stroke-width: 0.5px;
+    }
+
+    .hero-heading {
+      font-size: 40px;
+      font-weight: 800;
+      color: #1f2024;
+      line-height: 1.35;
+      max-width: 637px;
+    }
+
+    .hero-description {
+      font-size: 18px;
+      font-weight: 500;
+      color: #616b7b;
+      line-height: 1.6;
+      max-width: 637px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #3188f4;
+      color: #ffffff;
+      font-family: 'Manrope', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 14px 40px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+      width: fit-content;
+    }
+
+    .btn-primary:hover {
+      background-color: #2570d4;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(49, 136, 244, 0.4);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    /* ===================== FEATURES SECTION ===================== */
+    .features-section {
+      background-color: #1a2845;
+      padding: 72px 0 96px;
+    }
+
+    .features-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 178px;
+    }
+
+    .features-title {
+      font-size: 34px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 44px;
+      text-align: center;
+      margin-bottom: 72px;
+    }
+
+    .features-row {
+      display: flex;
+      gap: 100px;
+      align-items: flex-start;
+    }
+
+    .features-list {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding-top: 90px;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .feature-line {
+      width: 5px;
+      height: 66px;
+      color: #ffffff;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .feature-text {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .feature-text h3 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .feature-text p {
+      font-size: 18px;
+      font-weight: 500;
+      color: #ffffff;
+      line-height: 1.5;
+    }
+
+    .feature-item-plain .feature-text h3 {
+      color: #9db5ce;
+    }
+
+    .feature-item-plain .feature-text p {
+      color: #9db5ce;
+    }
+
+    /* -- Invite Card -- */
+    .invite-card {
+      width: 400px;
+      flex-shrink: 0;
+      background: #ffffff;
+      border-radius: 30px;
+      box-shadow: 0px 2px 7px 2px rgba(0, 0, 0, 0.50);
+      padding: 30px 22px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .invite-card-avatar {
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .invite-card-avatar img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .invite-card-avatar .camera-icon {
+      position: absolute;
+      bottom: 0;
+      right: -8px;
+      width: 28px;
+      height: 28px;
+      background: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    .invite-card-avatar .camera-icon svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .invite-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-label {
+      font-size: 12px;
+      font-weight: 400;
+      color: #454a55;
+      letter-spacing: 1px;
+    }
+
+    .form-input {
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #3f4260;
+      letter-spacing: 0.88px;
+      padding: 10px 22px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      background: #f8f8f8;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-input:focus {
+      border-color: #3188f4;
+    }
+
+    .permissions-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .permissions-label {
+      font-size: 14.93px;
+      font-weight: 700;
+      color: #1f2024;
+    }
+
+    .permissions-options {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .permission-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .permission-option .radio-icon {
+      width: 27px;
+      height: 27px;
+    }
+
+    .permission-option .radio-icon.selected {
+      color: #3188f4;
+    }
+
+    .permission-option .radio-icon.normal {
+      color: #4e4e4e;
+    }
+
+    .permission-option span {
+      font-size: 14.93px;
+      font-weight: 400;
+      color: #454a55;
+      line-height: 19.2px;
+    }
+
+    .child-users-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .child-users-label {
+      font-size: 14.93px;
+      font-weight: 700;
+      color: #1f2024;
+    }
+
+    .child-users-avatars {
+      display: flex;
+      gap: 12px;
+    }
+
+    .child-users-avatars img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .child-users-avatars img:hover {
+      transform: scale(1.08);
+    }
+
+    .btn-send-invite {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #3188f4;
+      color: #fbfbfb;
+      font-family: 'Manrope', sans-serif;
+      font-size: 12.73px;
+      font-weight: 700;
+      padding: 10px 40px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      margin-top: 12px;
+      transition: background-color 0.3s, transform 0.2s;
+      width: 60%;
+      align-self: center;
+    }
+
+    .btn-send-invite:hover {
+      background-color: #2570d4;
+      transform: translateY(-1px);
+    }
+
+    /* ===================== BENEFITS SECTION ===================== */
+    .benefits-section {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 96px 178px 48px;
+    }
+
+    .benefits-title {
+      font-size: 34px;
+      font-weight: 800;
+      color: #1f2024;
+      line-height: 44px;
+      margin-bottom: 24px;
+    }
+
+    .benefits-text {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .benefits-text p {
+      font-size: 18px;
+      font-weight: 400;
+      color: #383e48;
+      line-height: 28px;
+    }
+
+    /* ===================== TESTIMONIALS SECTION ===================== */
+    .testimonials-section {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 48px 138px 72px;
+    }
+
+    .testimonials-row {
+      display: flex;
+      gap: 48px;
+    }
+
+    .testimonial-card {
+      flex: 1;
+      border-radius: 15px;
+      box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25);
+      padding: 20px 20px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0px 4px 12px 2px rgba(0, 0, 0, 0.15);
+    }
+
+    .testimonial-header {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .testimonial-name {
+      font-size: 16px;
+      font-weight: 500;
+      color: #383e48;
+    }
+
+    .testimonial-name strong {
+      font-weight: 700;
+    }
+
+    .testimonial-store {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .testimonial-store-name {
+      font-size: 16px;
+      font-weight: 500;
+      color: #383e48;
+    }
+
+    .testimonial-stars {
+      width: 120px;
+      height: 20px;
+      color: #f5a623;
+    }
+
+    .testimonial-text {
+      font-size: 20px;
+      font-weight: 400;
+      color: #1f2024;
+      line-height: 32px;
+    }
+
+    /* ===================== CTA SECTION ===================== */
+    .cta-section {
+      background-color: #1a2845;
+      padding: 72px 0;
+    }
+
+    .cta-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .cta-title {
+      font-size: 34px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 44px;
+      text-align: center;
+    }
+
+    .cta-benefits {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .cta-benefit-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cta-benefit-item .tick-icon {
+      width: 24px;
+      height: 24px;
+      color: #3187f3;
+      flex-shrink: 0;
+    }
+
+    .cta-benefit-item span {
+      font-size: 18px;
+      font-weight: 500;
+      color: #deebff;
+    }
+
+    .cta-section .btn-primary {
+      margin-top: 24px;
+    }
+
+    /* ===================== TABLET (768px - 1024px) ===================== */
+    @media (max-width: 1024px) {
+      /* -- Hero Banner -- */
+      .hero-banner {
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px 48px;
+      }
+
+      .side-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 4px;
+      }
+
+      .side-nav-item {
+        padding: 8px 12px;
+        gap: 8px;
+      }
+
+      .side-nav-item:hover {
+        padding-left: 12px;
+      }
+
+      .side-nav-item .nav-icon {
+        width: 22px;
+        height: 21px;
+      }
+
+      .side-nav-item .nav-label {
+        font-size: 15px;
+      }
+
+      .side-nav-item.active {
+        padding-left: 12px;
+      }
+
+      .side-nav-item.active::before {
+        left: 0;
+        top: auto;
+        bottom: -2px;
+        transform: none;
+        width: 100%;
+        height: 3px;
+      }
+
+      .hero-content {
+        padding-top: 0;
+      }
+
+      .hero-heading {
+        font-size: 34px;
+        max-width: 100%;
+      }
+
+      .hero-description {
+        max-width: 100%;
+      }
+
+      /* -- Features -- */
+      .features-inner {
+        padding: 0 48px;
+      }
+
+      .features-title {
+        font-size: 28px;
+        line-height: 38px;
+        margin-bottom: 48px;
+      }
+
+      .features-row {
+        flex-direction: column;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .features-list {
+        padding-top: 0;
+        width: 100%;
+      }
+
+      .invite-card {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      /* -- Benefits -- */
+      .benefits-section {
+        padding: 72px 48px 48px;
+      }
+
+      .benefits-title {
+        font-size: 28px;
+        line-height: 38px;
+      }
+
+      /* -- Testimonials -- */
+      .testimonials-section {
+        padding: 48px 48px 72px;
+      }
+
+      .testimonials-row {
+        gap: 24px;
+      }
+
+      .testimonial-text {
+        font-size: 17px;
+        line-height: 28px;
+      }
+
+      /* -- CTA -- */
+      .cta-benefits {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px 32px;
+      }
+
+      .cta-title {
+        font-size: 28px;
+        line-height: 38px;
+        padding: 0 20px;
+      }
+    }
+
+    /* ===================== MOBILE (320px - 767px) ===================== */
+    @media (max-width: 767px) {
+      /* -- Hero Banner -- */
+      .hero-banner {
+        flex-direction: column;
+        gap: 32px;
+        padding: 24px 20px;
+      }
+
+      .side-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 4px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .side-nav-item {
+        padding: 8px 10px;
+        gap: 6px;
+        flex-shrink: 0;
+      }
+
+      .side-nav-item .nav-icon {
+        width: 20px;
+        height: 19px;
+      }
+
+      .side-nav-item .nav-label {
+        font-size: 13px;
+      }
+
+      .hero-content {
+        padding-top: 0;
+        gap: 16px;
+      }
+
+      .hero-badge {
+        font-size: 13px;
+        padding: 3px 10px;
+      }
+
+      .hero-heading {
+        font-size: 28px;
+        line-height: 1.3;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .btn-primary {
+        font-size: 16px;
+        padding: 14px 32px;
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* -- Features -- */
+      .features-section {
+        padding: 48px 0 64px;
+      }
+
+      .features-inner {
+        padding: 0 20px;
+      }
+
+      .features-title {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 36px;
+      }
+
+      .features-row {
+        flex-direction: column;
+        gap: 36px;
+      }
+
+      .features-list {
+        padding-top: 0;
+      }
+
+      .feature-text h3 {
+        font-size: 20px;
+      }
+
+      .feature-text p {
+        font-size: 16px;
+      }
+
+      .invite-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 24px 16px;
+      }
+
+      .permissions-options {
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .btn-send-invite {
+        width: 80%;
+      }
+
+      /* -- Benefits -- */
+      .benefits-section {
+        padding: 48px 20px 32px;
+      }
+
+      .benefits-title {
+        font-size: 24px;
+        line-height: 32px;
+      }
+
+      .benefits-text p {
+        font-size: 16px;
+        line-height: 26px;
+      }
+
+      /* -- Testimonials -- */
+      .testimonials-section {
+        padding: 32px 20px 48px;
+      }
+
+      .testimonials-row {
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .testimonial-text {
+        font-size: 16px;
+        line-height: 26px;
+      }
+
+      /* -- CTA -- */
+      .cta-section {
+        padding: 48px 20px;
+      }
+
+      .cta-title {
+        font-size: 24px;
+        line-height: 32px;
+      }
+
+      .cta-benefits {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+      }
+
+      .cta-benefit-item span {
+        font-size: 16px;
+      }
+
+      .cta-section .btn-primary {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== HERO / BANNER SECTION ===================== -->
+  <section class="hero-banner fade-in" aria-label="Collaboration hero">
+    <!-- Side Navigation -->
+    <nav class="side-nav" aria-label="Feature navigation">
+      <a href="#" class="side-nav-item" aria-label="Screen Time">
+        <img class="nav-icon" src="assets/icon-screen-time.svg" alt="" width="28" height="27">
+        <span class="nav-label">Screen Time</span>
+      </a>
+      <a href="#" class="side-nav-item" aria-label="Porn Blocker">
+        <img class="nav-icon" src="assets/icon-porn-blocker.svg" alt="" width="28" height="27">
+        <span class="nav-label">Porn Blocker</span>
+      </a>
+      <a href="#" class="side-nav-item" aria-label="Social Media Monitor">
+        <img class="nav-icon" src="assets/icon-social-media.svg" alt="" width="28" height="27">
+        <span class="nav-label">Social Media Monitor</span>
+      </a>
+      <a href="#" class="side-nav-item" aria-label="Activity Summary">
+        <img class="nav-icon" src="../activity summary/assets/icon-activity.svg" alt="" width="28" height="27">
+        <span class="nav-label">Activity Summary</span>
+      </a>
+      <a href="#" class="side-nav-item" aria-label="Website Blocker">
+        <img class="nav-icon" src="../activity summary/assets/icon-website-blocker.svg" alt="" width="28" height="27">
+        <span class="nav-label">Website Blocker</span>
+      </a>
+      <a href="#" class="side-nav-item" aria-label="Family Locator">
+        <img class="nav-icon" src="assets/icon-locator.svg" alt="" width="28" height="27">
+        <span class="nav-label">Family Locator</span>
+      </a>
+      <a href="#" class="side-nav-item active" aria-label="Collaboration">
+        <img class="nav-icon" src="assets/icon-collaboration.svg" alt="" width="28" height="27">
+        <span class="nav-label">Collaboration</span>
+      </a>
+    </nav>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <span class="hero-badge">CO-PARENTING</span>
+      <h1 class="hero-heading">Share Parenting Duties with Co-Parents &amp; Guardians</h1>
+      <p class="hero-description">Invite another parent or a trusted guardian to review activities, manage screen time or to be involved in parenting rules. Give them admin rights or give them limited access as you deem fit.</p>
+      <button class="btn-primary">Start Free Trial</button>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURES SECTION ===================== -->
+  <section class="features-section fade-in">
+    <div class="features-inner">
+      <h2 class="features-title">Share the Digital Parenting Responsibilities</h2>
+      <div class="features-row">
+        <!-- Text Features -->
+        <div class="features-list">
+          <div class="feature-item">
+            <svg class="feature-line" viewBox="0 0 5 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="5" height="66" rx="2.5" fill="#3188F4"/>
+            </svg>
+            <div class="feature-text">
+              <h3>Shared Control Interface</h3>
+              <p>Both parents can monitor screen time limits, block sites, and adjust content filtering rules from single unified dashboard.</p>
+            </div>
+          </div>
+          <div class="feature-item feature-item-plain">
+            <div class="feature-text">
+              <h3>Real-Time Notifications</h3>
+              <p>Both co-parents get alerts when your child tries to access a restricted site, requests more screen time, or downloads a new app.</p>
+            </div>
+          </div>
+          <div class="feature-item feature-item-plain">
+            <div class="feature-text">
+              <h3>Unified Usage Reports</h3>
+              <p>Get a combined daily and weekly report of your child's online habits visible to both parents, ensuring you're both on the same page.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual / Graphic Element -->
+        <div class="invite-card fade-in">
+          <div class="invite-card-avatar">
+            <img src="assets/child-user-1.svg" alt="Profile avatar">
+            <div class="camera-icon">
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.15 4L8.85 2.5H5.15L3.85 4H2C1.45 4 1 4.45 1 5V13C1 13.55 1.45 14 2 14H12C12.55 14 13 13.55 13 13V5C13 4.45 12.55 4 12 4H10.15ZM7 12C5.35 12 4 10.65 4 9C4 7.35 5.35 6 7 6C8.65 6 10 7.35 10 9C10 10.65 8.65 12 7 12ZM7 7.5C6.17 7.5 5.5 8.17 5.5 9C5.5 9.83 6.17 10.5 7 10.5C7.83 10.5 8.5 9.83 8.5 9C8.5 8.17 7.83 7.5 7 7.5Z" fill="#3188F4"/>
+              </svg>
+            </div>
+          </div>
+          
+          <div class="invite-form">
+            <div class="form-group">
+              <span class="form-label">Email ID</span>
+              <input type="email" class="form-input" value="jenny@example.com" aria-label="Email Address">
+            </div>
+            <div class="form-group">
+              <span class="form-label">Name</span>
+              <input type="text" class="form-input" value="Jenny Smith" aria-label="Name">
+            </div>
+            
+            <div class="permissions-group">
+              <span class="permissions-label">Role</span>
+              <div class="permissions-options">
+                <div class="permission-option" role="radio" aria-checked="true" tabindex="0">
+                  <img src="assets/radio-selected.svg" class="radio-icon selected" alt="">
+                  <span>Co-Parent</span>
+                </div>
+                <div class="permission-option" role="radio" aria-checked="false" tabindex="0">
+                  <img src="assets/radio-normal.svg" class="radio-icon normal" alt="">
+                  <span>Viewer</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="child-users-group">
+              <span class="child-users-label">Assign child users</span>
+              <div class="child-users-avatars">
+                <img src="assets/child-user-2.svg" alt="Child 1">
+                <img src="assets/child-user-3.svg" alt="Child 2">
+              </div>
+            </div>
+            
+            <button class="btn-send-invite">Send Invite</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BENEFITS SECTION ===================== -->
+  <section class="benefits-section fade-in">
+    <h2 class="benefits-title">Why Use Co-Parenting?</h2>
+    <div class="benefits-text">
+      <p>Parenting shouldn't be a solo job. With Mobicip's Co-Parenting features, both parents get a unified view of kids' online activities, making it easier to discuss family rules and address screen time challenges together. Having both parents involved means consistent rules and less “Mom said yes, so Dad must too!”</p>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS SECTION ===================== -->
+  <section class="testimonials-section fade-in">
+    <div class="testimonials-row">
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <span class="testimonial-name"><strong>Mark R</strong> – London, UK</span>
+          <div class="testimonial-store">
+            <img class="testimonial-stars" src="assets/stars-2.svg" alt="5 stars">
+          </div>
+        </div>
+        <p class="testimonial-text">"Mobicip's Co-Parenting mode has been a lifesaver.  My husband and I are both on the same page now, and the daily activity reports help us manage screen time without constantly arguing over limits. Highly recommended!"</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <span class="testimonial-name"><strong>Chloe M</strong> – New York, US</span>
+          <div class="testimonial-store">
+            <img class="testimonial-stars" src="assets/stars-2.svg" alt="5 stars">
+          </div>
+        </div>
+        <p class="testimonial-text">"I love how we can both see notifications when our teen requests a restricted site. It makes navigating online safety feel like a team effort instead of just one parent doing the heavy lifting."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA SECTION ===================== -->
+  <section class="cta-section fade-in">
+    <div class="cta-inner">
+      <h2 class="cta-title">Start Building Healthy Digital Habits Today!</h2>
+      <div class="cta-benefits">
+        <div class="cta-benefit-item">
+          <img src="assets/icon-tick.svg" class="tick-icon" alt="">
+          <span>7-day Free Trial</span>
+        </div>
+        <div class="cta-benefit-item">
+          <img src="assets/icon-tick.svg" class="tick-icon" alt="">
+          <span>Upgrade Anytime</span>
+        </div>
+        <div class="cta-benefit-item">
+          <img src="assets/icon-tick.svg" class="tick-icon" alt="">
+          <span>Fast and Friendly Support</span>
+        </div>
+      </div>
+      <button class="btn-primary">Start Free Trial</button>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // ===== INVITATION FORM ROLE SELECTION =====
+      var permissions = document.querySelectorAll('.permission-option');
+      permissions.forEach(function(opt) {
+        opt.addEventListener('click', function() {
+          permissions.forEach(function(o) {
+            o.setAttribute('aria-checked', 'false');
+            var img = o.querySelector('img');
+            img.src = 'assets/radio-normal.svg';
+            img.className = 'radio-icon normal';
+          });
+          this.setAttribute('aria-checked', 'true');
+          var myImg = this.querySelector('img');
+          myImg.src = 'assets/radio-selected.svg';
+          myImg.className = 'radio-icon selected';
+        });
+        
+        opt.addEventListener('keydown', function(e) {
+          if (e.key === ' ' || e.key === 'Enter') {
+            e.preventDefault();
+            this.click();
+          }
+        });
+      });
+
+      // ===== SCROLL FADE IN =====
+      var fadeEls = document.querySelectorAll('.fade-in');
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        fadeEls.forEach(function(el) { observer.observe(el); });
+      } else {
+        fadeEls.forEach(function(el) { el.classList.add('visible'); });
+      }
+    });
+  </script>
+</body>
+</html>
