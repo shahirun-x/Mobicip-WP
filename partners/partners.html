@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobicip Partners Program</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3188F4;
+            --heading: #1F2024;
+            --body-alt: #383E48;
+            --body: #6A7384;
+            --badge-bg: #555C67;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: white;
+            color: var(--body-alt);
+        }
+
+        /* Sticky Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 20px 90px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--heading);
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1260px;
+            margin: 0 auto;
+            padding: 80px 90px;
+        }
+
+        /* Page Heading */
+        .page-heading {
+            font-size: 44px;
+            font-weight: 800;
+            color: var(--heading);
+            margin-bottom: 64px;
+        }
+
+        /* Two Column Layout */
+        .columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .column {
+            max-width: 518px;
+        }
+
+        /* Section Headings */
+        h2 {
+            font-size: 34px;
+            font-weight: 800;
+            line-height: 44px;
+            color: var(--heading);
+            margin-bottom: 16px;
+        }
+
+        /* Subheadings */
+        h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--heading);
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        .column h3:first-of-type {
+            margin-top: 16px;
+        }
+
+        /* Body Text */
+        p {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 28px;
+            color: var(--body-alt);
+        }
+
+        /* Links */
+        a.text-link {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        a.text-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Steps Container */
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .step {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        /* Numbered Badge */
+        .step-number {
+            flex-shrink: 0;
+            width: 23px;
+            height: 23px;
+            border: 2px solid var(--badge-bg);
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--badge-bg);
+            margin-top: 2px;
+        }
+
+        .step-text {
+            flex: 1;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 28px;
+            color: var(--body-alt);
+        }
+
+        /* Footer Text Spacing */
+        .footer-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        /* Tablet Styles */
+        @media (max-width: 768px) {
+            nav {
+                padding: 20px 28px;
+            }
+
+            .container {
+                padding: 60px 28px;
+            }
+
+            .page-heading {
+                font-size: 32px;
+            }
+
+            .columns {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .column {
+                max-width: 100%;
+            }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 480px) {
+            nav {
+                padding: 16px;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav .logo {
+                font-size: 20px;
+            }
+
+            .container {
+                padding: 40px 16px;
+            }
+
+            .page-heading {
+                font-size: 26px;
+                margin-bottom: 48px;
+            }
+
+            h2 {
+                font-size: 26px;
+                line-height: 34px;
+            }
+
+            h3 {
+                font-size: 22px;
+            }
+
+            p, .step-text {
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .footer-text p {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Content -->
+    <div class="container">
+        <h1 class="page-heading">Does Mobicip have a Partner Program?</h1>
+
+        <div class="columns">
+            <!-- Left Column: Affiliates -->
+            <div class="column">
+                <h2>Affiliates</h2>
+                <p>Mobicip offers an affiliate program in which bloggers, web publishers, influencers, system administrators, consultants, and resellers are invited to promote Mobicip and earn commissions.</p>
+
+                <h3>This is how it works:</h3>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-text">Visit the <a href="#" class="text-link">Mobicip Affiliate Program</a> portal to enroll.</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-text">Once approved, you will have access to affiliate assets such as your own unique affiliate link and easy-to-embed graphics.</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-text">Inside the reporting features of the affiliate portal, you can track traffic, conversions, and commissions.</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-text">You earn a 20% commission on every sale you refer!</div>
+                    </div>
+                </div>
+
+                <div class="footer-text">
+                    <p>Join the <a href="#" class="text-link">Mobicip Affiliate Program</a> today. Its free!</p>
+                    <p>For questions about the affiliate program, please email <a href="#" class="text-link">support@mobicip.com</a></p>
+                </div>
+            </div>
+
+            <!-- Right Column: Resellers/Distributors -->
+            <div class="column">
+                <h2>Resellers/Distributors</h2>
+
+                <h3>Getting on Board:</h3>
+                <p>Are you interested in selling or distributing Mobicip's products in your region? <a href="#" class="text-link">Contact us</a> today.</p>
+
+                <h3>For Authorised Resellers/Distributors:</h3>
+                <p>If you are signing up new customers, here's the <a href="#" class="text-link">deal registration form</a>. The customer also needs to <a href="#" class="text-link">sign up</a> here and agree to the "Terms & Conditions" before we distribute the licenses.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
