@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobicip Header Desktop</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+  body { font-family:'Manrope',sans-serif; background:#f0f4f8; }
+
+  /* ─── HEADER ─── */
+  .mc-header {
+    background: #ffffff;
+    box-shadow: 0px 8px 12px rgba(0,0,0,0.10);
+    width: 100%;
+    height: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+  }
+
+  .mc-header__inner {
+    width: 1084px;
+    max-width: 100%;
+    padding: 0 24px;
+    height: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* ─── LOGO ─── */
+  /* Single image — replace src with your hosted Mobicip logo */
+  .mc-logo-link { display:block; flex-shrink:0; }
+  .mc-logo {
+    width: 142px;
+    height: 32px;
+    object-fit: contain;
+    display: block;
+    /* Fallback grey box if image missing */
+    background: #eaf2ff;
+    border-radius: 6px;
+  }
+
+  /* ─── NAV AREA ─── */
+  .mc-nav { display:flex; align-items:center; gap:39px; }
+  .mc-nav__links { display:flex; align-items:center; gap:40px; }
+
+  /* ─── EACH MENU ITEM ─── */
+  .mc-item {
+    position: relative;
+    height: 57px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .mc-item__label { display:flex; align-items:center; gap:4px; }
+
+  .mc-item__text {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1;
+    color: #454A55;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .mc-item__text--login { font-weight:600; color:#3188F4; }
+
+  /* chevron */
+  .mc-item__chevron {
+    width:10px; height:6px;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0; margin-top:1px;
+    transition: transform 0.2s ease;
+  }
+  .mc-item__chevron svg path { transition: stroke 0.15s; }
+
+  /* bottom active line */
+  .mc-item::after {
+    content:'';
+    position:absolute; bottom:0; left:0;
+    width:100%; height:2px;
+    background:transparent;
+    transition: background 0.15s;
+    border-radius:2px 2px 0 0;
+  }
+  .mc-item:hover::after,
+  .mc-item.is-open::after { background:#3188F4; }
+
+  .mc-item:hover .mc-item__text,
+  .mc-item.is-open .mc-item__text { color:#3188F4; }
+
+  .mc-item:hover .mc-item__chevron svg path,
+  .mc-item.is-open .mc-item__chevron svg path { stroke:#3188F4; }
+
+  .mc-item.is-open .mc-item__chevron { transform:rotate(180deg); }
+
+  /* ─── DROPDOWN PANEL ─── */
+  .mc-dropdown {
+    position: absolute;
+    top: 100%;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 16px 48px rgba(0,0,0,0.13), 0px 2px 8px rgba(0,0,0,0.05);
+    padding: 16px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0.18s;
+    z-index: 100;
+  }
+  .mc-item.is-open .mc-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0);
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0s;
+  }
+
+  /* ─── FEATURES DROPDOWN ─── */
+  .mc-dropdown--features {
+    left: -100px;
+    width: 600px;
+  }
+  .mc-dd-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+  }
+
+  /* ─── RESOURCES DROPDOWN ─── */
+  .mc-dropdown--resources {
+    left: 0;
+    width: 220px;
+  }
+  .mc-dd-list { display:flex; flex-direction:column; gap:4px; }
+
+  /* ─── DROPDOWN ITEM ─── */
+  .mc-dd-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.15s;
+    cursor: pointer;
+  }
+  .mc-dd-item:hover { background:#f5f8ff; }
+
+  /* simple = no description (Resources items) */
+  .mc-dd-item--simple { align-items:center; }
+
+  /* ─── ICON CIRCLE ─── */
+  .mc-dd-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  /* tint colours */
+  .mc-dd-icon--green  { background:#edfaf3; }
+  .mc-dd-icon--purple { background:#f3eeff; }
+  .mc-dd-icon--blue   { background:#eaf2ff; }
+  .mc-dd-icon--teal   { background:#e6faf8; }
+  .mc-dd-icon--orange { background:#fff2ee; }
+
+  /*
+    Icon placeholder — 26×26px coloured rect.
+    SWAP each one out with your real <img src="..."> or inline <svg> at 26×26px.
+    The circle container stays at 48×48px always.
+  */
+  .mc-dd-icon__ph {
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    display: block;
+    opacity: 0.45;
+  }
+
+  /* ─── DROPDOWN TEXT ─── */
+  .mc-dd-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 3px;
+  }
+  .mc-dd-title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 14.5px;
+    line-height: 1.2;
+    color: #1F2024;
+    white-space: nowrap;
+  }
+  .mc-dd-item--simple .mc-dd-title { font-size:15px; }
+  .mc-dd-desc {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #6B7280;
+    max-width: 195px;
+  }
+
+  /* ─── CTA BUTTON ─── */
+  .mc-btn {
+    background: #3188F4;
+    color: #FFFFFF;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 0 16px;
+    height: 32px;
+    border-radius: 24px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background 0.18s;
+  }
+  .mc-btn:hover { background:#1a6fc4; }
+
+</style>
+</head>
+<body>
+
+<header class="mc-header">
+  <div class="mc-header__inner">
+
+    <!-- ══════════ LOGO ══════════ -->
+    <!--
+      Single image placeholder for the full Mobicip logo.
+      Replace YOUR_LOGO_URL with your hosted image URL e.g.
+        src="https://yourdomain.com/wp-content/uploads/mobicip-logo.png"
+      Recommended: PNG/SVG, transparent background, ~284×64px @2x
+    -->
+    <a href="/" class="mc-logo-link">
+      <img
+        class="mc-logo"
+        src="YOUR_LOGO_URL"
+        alt="Mobicip"
+        width="142"
+        height="32"
+      >
+    </a>
+
+    <!-- ══════════ NAV + CTA ══════════ -->
+    <div class="mc-nav">
+      <nav class="mc-nav__links">
+
+        <!-- ── FEATURES ── -->
+        <div class="mc-item" id="mc-features">
+          <div class="mc-item__label">
+            <span class="mc-item__text">Features</span>
+            <span class="mc-item__chevron">
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="#454A55" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+
+          <div class="mc-dropdown mc-dropdown--features">
+            <div class="mc-dd-grid">
+
+              <!-- 1. Screen Time Scheduler -->
+              <a href="#" class="mc-dd-item">
+                <div class="mc-dd-icon mc-dd-icon--green">
+                  <!--
+                    ICON PLACEHOLDER — Screen Time Scheduler
+                    Replace the <svg> below with:
+                    <img src="YOUR_ICON.svg" width="26" height="26" alt="">
+                    or your inline SVG icon at 26×26px
+                  -->
+                  <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#22C55E"/></svg>
+                </div>
+                <div class="mc-dd-text">
+                  <span class="mc-dd-title">Screen Time Scheduler</span>
+                  <span class="mc-dd-desc">Create schedules to limit screen time &amp; app usage</span>
+                </div>
+              </a>
+
+              <!-- 2. Website Blocker -->
+              <a href="#" class="mc-dd-item">
+                <div class="mc-dd-icon mc-dd-icon--purple">
+                  <!-- ICON PLACEHOLDER — Website Blocker (26×26px) -->
+                  <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#A855F7"/></svg>
+                </div>
+                <div class="mc-dd-text">
+                  <span class="mc-dd-title">Website Blocker</span>
+                  <span class="mc-dd-desc">Monitor &amp; block adult websites</span>
+                </div>
+              </a>
+
+              <!-- 3. Social Media Monitor -->
+              <a href="#" class="mc-dd-item">
+                <div class="mc-dd-icon mc-dd-icon--purple">
+                  <!-- ICON PLACEHOLDER — Social Media Monitor (26×26px) -->
+                  <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#7C3AED"/></svg>
+                </div>
+                <div class="mc-dd-text">
+                  <span class="mc-dd-title">Social Media Monitor</span>
+                  <span class="mc-dd-desc">Monitor social media &amp; prevent risky behavior</span>
+                </div>
+              </a>
+
+              <!-- 4. Family Locator -->
+              <a href="#" class="mc-dd-item">
+                <div class="mc-dd-icon mc-dd-icon--blue">
+                  <!-- ICON PLACEHOLDER — Family Locator (26×26px) -->
+                  <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#3188F4"/></svg>
+                </div>
+                <div class="mc-dd-text">
+                  <span class="mc-dd-title">Family Locator</span>
+                  <span class="mc-dd-desc">Locate your children and set geo-boundaries to ensure their safety</span>
+                </div>
+              </a>
+
+              <!-- 5. App Blocker -->
+              <a href="#" class="mc-dd-item">
+                <div class="mc-dd-icon mc-dd-icon--purple">
+                  <!-- ICON PLACEHOLDER — App Blocker (26×26px) -->
+                  <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#9333EA"/></svg>
+                </div>
+                <div class="mc-dd-text">
+                  <span class="mc-dd-title">App Blocker</span>
+                  <span class="mc-dd-desc">Limit and block distractive apps</span>
+                </div>
+              </a>
+
+              <!-- 6. Expert Advice -->
+              <a href="#" class="mc-dd-item">
+                <div class="mc-dd-icon mc-dd-icon--teal">
+                  <!-- ICON PLACEHOLDER — Expert Advice (26×26px) -->
+                  <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#14B8A6"/></svg>
+                </div>
+                <div class="mc-dd-text">
+                  <span class="mc-dd-title">Expert Advice</span>
+                  <span class="mc-dd-desc">Learn parenting tips from experts on digital wellness</span>
+                </div>
+              </a>
+
+              <!-- 7. Activity Summary -->
+              <a href="#" class="mc-dd-item">
+                <div class="mc-dd-icon mc-dd-icon--blue">
+                  <!-- ICON PLACEHOLDER — Activity Summary (26×26px) -->
+                  <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#3B82F6"/></svg>
+                </div>
+                <div class="mc-dd-text">
+                  <span class="mc-dd-title">Activity Summary</span>
+                  <span class="mc-dd-desc">Keep track of how your children spend their time online</span>
+                </div>
+              </a>
+
+              <!-- 8. Collaboration -->
+              <a href="#" class="mc-dd-item">
+                <div class="mc-dd-icon mc-dd-icon--orange">
+                  <!-- ICON PLACEHOLDER — Collaboration (26×26px) -->
+                  <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#F97316"/></svg>
+                </div>
+                <div class="mc-dd-text">
+                  <span class="mc-dd-title">Collaboration</span>
+                  <span class="mc-dd-desc">Team up with co-parents / guardians &amp; your child</span>
+                </div>
+              </a>
+
+            </div><!-- /mc-dd-grid -->
+          </div><!-- /mc-dropdown--features -->
+        </div><!-- /mc-item features -->
+
+        <!-- ── PRICING ── -->
+        <div class="mc-item">
+          <div class="mc-item__label">
+            <a href="#" class="mc-item__text">Pricing</a>
+          </div>
+        </div>
+
+        <!-- ── SUPPORT ── -->
+        <div class="mc-item">
+          <div class="mc-item__label">
+            <a href="#" class="mc-item__text">Support</a>
+          </div>
+        </div>
+
+        <!-- ── RESOURCES ── -->
+        <div class="mc-item" id="mc-resources">
+          <div class="mc-item__label">
+            <span class="mc-item__text">Resources</span>
+            <span class="mc-item__chevron">
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="#454A55" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+
+          <div class="mc-dropdown mc-dropdown--resources">
+            <div class="mc-dd-list">
+
+              <!-- Blog -->
+              <a href="#" class="mc-dd-item mc-dd-item--simple">
+                <div class="mc-dd-icon mc-dd-icon--green">
+                  <!-- ICON PLACEHOLDER — Blog (26×26px) -->
+                  <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#22C55E"/></svg>
+                </div>
+                <div class="mc-dd-text">
+                  <span class="mc-dd-title">Blog</span>
+                </div>
+              </a>
+
+              <!-- Testimonials -->
+              <a href="#" class="mc-dd-item mc-dd-item--simple">
+                <div class="mc-dd-icon mc-dd-icon--blue">
+                  <!-- ICON PLACEHOLDER — Testimonials (26×26px) -->
+                  <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#3188F4"/></svg>
+                </div>
+                <div class="mc-dd-text">
+                  <span class="mc-dd-title">Testimonials</span>
+                </div>
+              </a>
+
+            </div>
+          </div>
+        </div><!-- /mc-item resources -->
+
+        <!-- ── LOGIN ── -->
+        <div class="mc-item">
+          <div class="mc-item__label">
+            <a href="#" class="mc-item__text mc-item__text--login">Login</a>
+          </div>
+        </div>
+
+      </nav>
+
+      <a href="#" class="mc-btn">Start Free Trial</a>
+    </div>
+
+  </div>
+</header>
+
+
+<script>
+(function () {
+  var items = document.querySelectorAll('.mc-item');
+
+  items.forEach(function (item) {
+    if (!item.querySelector('.mc-dropdown')) return;
+
+    // Hover open
+    item.addEventListener('mouseenter', function () {
+      closeAll();
+      item.classList.add('is-open');
+    });
+    item.addEventListener('mouseleave', function (e) {
+      if (!item.contains(e.relatedTarget)) {
+        item.classList.remove('is-open');
+      }
+    });
+
+    // Click toggle (touch-friendly)
+    var label = item.querySelector('.mc-item__label');
+    if (label) {
+      label.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var wasOpen = item.classList.contains('is-open');
+        closeAll();
+        if (!wasOpen) item.classList.add('is-open');
+      });
+    }
+  });
+
+  document.addEventListener('click', closeAll);
+
+  function closeAll() {
+    items.forEach(function (i) { i.classList.remove('is-open'); });
+  }
+})();
+</script>
+
+</body>
+</html>
