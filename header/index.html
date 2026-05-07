@@ -3,291 +3,432 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mobicip Header Desktop</title>
+<title>Mobicip Header</title>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 
-  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+/* ==================================================
+   RESET
+================================================== */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Manrope',sans-serif; }
 
-  body { font-family:'Manrope',sans-serif; background:#f0f4f8; }
 
-  /* ─── HEADER ─── */
-  .mc-header {
-    background: #ffffff;
-    box-shadow: 0px 8px 12px rgba(0,0,0,0.10);
-    width: 100%;
-    height: 57px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-  }
+/* ==================================================
+   DESKTOP HEADER  (visible >= 1024px)
+================================================== */
 
-  .mc-header__inner {
-    width: 1084px;
-    max-width: 100%;
-    padding: 0 24px;
-    height: 57px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+.mc-header {
+  background: #ffffff;
+  box-shadow: 0px 8px 12px rgba(0,0,0,0.10);
+  width: 100%;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
 
-  /* ─── LOGO ─── */
-  /* Single image — replace src with your hosted Mobicip logo */
-  .mc-logo-link { display:block; flex-shrink:0; }
-  .mc-logo {
-    width: 142px;
-    height: 32px;
-    object-fit: contain;
-    display: block;
-    /* Fallback grey box if image missing */
-    background: #eaf2ff;
-    border-radius: 6px;
-  }
+/* Hide desktop header below 1024px */
+@media (max-width: 1023px) {
+  .mc-header { display: none !important; }
+}
 
-  /* ─── NAV AREA ─── */
-  .mc-nav { display:flex; align-items:center; gap:39px; }
-  .mc-nav__links { display:flex; align-items:center; gap:40px; }
+.mc-header__inner {
+  width: 1084px;
+  max-width: 100%;
+  padding: 0 24px;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  /* ─── EACH MENU ITEM ─── */
-  .mc-item {
-    position: relative;
-    height: 57px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    user-select: none;
-  }
+/* --- Logo (single image) ---
+     Replace YOUR_LOGO_URL with your hosted Mobicip logo.
+     Recommended: PNG/SVG, transparent bg, ~284x64px @2x
+*/
+.mc-logo-link { display:block; flex-shrink:0; }
+.mc-logo {
+  width: 142px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+  background: #eaf2ff; /* fallback placeholder colour */
+  border-radius: 6px;
+}
 
-  .mc-item__label { display:flex; align-items:center; gap:4px; }
+/* --- Nav area --- */
+.mc-nav { display:flex; align-items:center; gap:39px; }
+.mc-nav__links { display:flex; align-items:center; gap:40px; }
 
-  .mc-item__text {
-    font-family: 'Manrope', sans-serif;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 1;
-    color: #454A55;
-    white-space: nowrap;
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-  .mc-item__text--login { font-weight:600; color:#3188F4; }
+/* --- Menu item --- */
+.mc-item {
+  position: relative;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+.mc-item__label { display:flex; align-items:center; gap:4px; }
+.mc-item__text {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1;
+  color: #454A55;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.mc-item__text--login { font-weight:600; color:#3188F4; }
 
-  /* chevron */
-  .mc-item__chevron {
-    width:10px; height:6px;
-    display:flex; align-items:center; justify-content:center;
-    flex-shrink:0; margin-top:1px;
-    transition: transform 0.2s ease;
-  }
-  .mc-item__chevron svg path { transition: stroke 0.15s; }
+/* Chevron arrow */
+.mc-item__chevron {
+  width:10px; height:6px;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; margin-top:1px;
+  transition: transform 0.2s ease;
+}
+.mc-item__chevron svg path { transition: stroke 0.15s; }
 
-  /* bottom active line */
-  .mc-item::after {
-    content:'';
-    position:absolute; bottom:0; left:0;
-    width:100%; height:2px;
-    background:transparent;
-    transition: background 0.15s;
-    border-radius:2px 2px 0 0;
-  }
-  .mc-item:hover::after,
-  .mc-item.is-open::after { background:#3188F4; }
+/* Active bottom underline */
+.mc-item::after {
+  content:'';
+  position:absolute; bottom:0; left:0;
+  width:100%; height:2px;
+  background:transparent;
+  transition: background 0.15s;
+  border-radius:2px 2px 0 0;
+}
+.mc-item:hover::after,
+.mc-item.is-open::after { background:#3188F4; }
 
-  .mc-item:hover .mc-item__text,
-  .mc-item.is-open .mc-item__text { color:#3188F4; }
+.mc-item:hover .mc-item__text,
+.mc-item.is-open .mc-item__text { color:#3188F4; }
 
-  .mc-item:hover .mc-item__chevron svg path,
-  .mc-item.is-open .mc-item__chevron svg path { stroke:#3188F4; }
+.mc-item:hover .mc-item__chevron svg path,
+.mc-item.is-open .mc-item__chevron svg path { stroke:#3188F4; }
 
-  .mc-item.is-open .mc-item__chevron { transform:rotate(180deg); }
+.mc-item.is-open .mc-item__chevron { transform:rotate(180deg); }
 
-  /* ─── DROPDOWN PANEL ─── */
-  .mc-dropdown {
-    position: absolute;
-    top: 100%;
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0px 16px 48px rgba(0,0,0,0.13), 0px 2px 8px rgba(0,0,0,0.05);
-    padding: 16px;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(8px);
-    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0.18s;
-    z-index: 100;
-  }
-  .mc-item.is-open .mc-dropdown {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-    transform: translateY(0);
-    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0s;
-  }
+/* --- Dropdown panel base --- */
+.mc-dropdown {
+  position: absolute;
+  top: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0px 16px 48px rgba(0,0,0,0.13), 0px 2px 8px rgba(0,0,0,0.05);
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0.18s;
+  z-index: 100;
+}
+.mc-item.is-open .mc-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translateY(0);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0s;
+}
 
-  /* ─── FEATURES DROPDOWN ─── */
-  .mc-dropdown--features {
-    left: -100px;
-    width: 600px;
-  }
-  .mc-dd-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4px;
-  }
+/* --- Features dropdown (2-col, 600px wide) --- */
+.mc-dropdown--features { left:-100px; width:600px; }
+.mc-dd-grid { display:grid; grid-template-columns:1fr 1fr; gap:4px; }
 
-  /* ─── RESOURCES DROPDOWN ─── */
-  .mc-dropdown--resources {
-    left: 0;
-    width: 220px;
-  }
-  .mc-dd-list { display:flex; flex-direction:column; gap:4px; }
+/* --- Resources dropdown (1-col, 220px wide) --- */
+.mc-dropdown--resources { left:0; width:220px; }
+.mc-dd-list { display:flex; flex-direction:column; gap:4px; }
 
-  /* ─── DROPDOWN ITEM ─── */
-  .mc-dd-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 10px 12px;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: background 0.15s;
-    cursor: pointer;
-  }
-  .mc-dd-item:hover { background:#f5f8ff; }
+/* --- Dropdown item --- */
+.mc-dd-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.15s;
+  cursor: pointer;
+}
+.mc-dd-item:hover { background:#f5f8ff; }
+.mc-dd-item--simple { align-items:center; }
 
-  /* simple = no description (Resources items) */
-  .mc-dd-item--simple { align-items:center; }
+/* Icon circle — 48x48px container
+   SWAP the placeholder SVG inside for your real icon at 26x26px.
+   The circle stays 48x48 always.
+*/
+.mc-dd-icon {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.mc-dd-icon--green  { background:#edfaf3; }
+.mc-dd-icon--purple { background:#f3eeff; }
+.mc-dd-icon--blue   { background:#eaf2ff; }
+.mc-dd-icon--teal   { background:#e6faf8; }
+.mc-dd-icon--orange { background:#fff2ee; }
 
-  /* ─── ICON CIRCLE ─── */
-  .mc-dd-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  /* tint colours */
-  .mc-dd-icon--green  { background:#edfaf3; }
-  .mc-dd-icon--purple { background:#f3eeff; }
-  .mc-dd-icon--blue   { background:#eaf2ff; }
-  .mc-dd-icon--teal   { background:#e6faf8; }
-  .mc-dd-icon--orange { background:#fff2ee; }
+/* Placeholder shape — remove when replacing with real icons */
+.mc-dd-icon__ph { width:26px; height:26px; border-radius:4px; display:block; opacity:0.45; }
 
-  /*
-    Icon placeholder — 26×26px coloured rect.
-    SWAP each one out with your real <img src="..."> or inline <svg> at 26×26px.
-    The circle container stays at 48×48px always.
-  */
-  .mc-dd-icon__ph {
-    width: 26px;
-    height: 26px;
-    border-radius: 4px;
-    display: block;
-    opacity: 0.45;
-  }
+/* Text */
+.mc-dd-text { display:flex; flex-direction:column; gap:4px; padding-top:3px; }
+.mc-dd-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700; font-size: 14.5px; line-height: 1.2;
+  color: #1F2024; white-space: nowrap;
+}
+.mc-dd-item--simple .mc-dd-title { font-size:15px; }
+.mc-dd-desc {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400; font-size: 12px; line-height: 1.55;
+  color: #6B7280; max-width: 195px;
+}
 
-  /* ─── DROPDOWN TEXT ─── */
-  .mc-dd-text {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding-top: 3px;
-  }
-  .mc-dd-title {
-    font-family: 'Manrope', sans-serif;
-    font-weight: 700;
-    font-size: 14.5px;
-    line-height: 1.2;
-    color: #1F2024;
-    white-space: nowrap;
-  }
-  .mc-dd-item--simple .mc-dd-title { font-size:15px; }
-  .mc-dd-desc {
-    font-family: 'Manrope', sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.55;
-    color: #6B7280;
-    max-width: 195px;
-  }
+/* --- CTA button --- */
+.mc-btn {
+  background: #3188F4; color: #FFFFFF;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700; font-size: 15px;
+  padding: 0 16px; height: 32px;
+  border-radius: 24px; border: none;
+  cursor: pointer; text-decoration: none;
+  display: inline-flex; align-items: center; justify-content: center;
+  white-space: nowrap; flex-shrink: 0;
+  transition: background 0.18s;
+}
+.mc-btn:hover { background:#1a6fc4; }
 
-  /* ─── CTA BUTTON ─── */
-  .mc-btn {
-    background: #3188F4;
-    color: #FFFFFF;
-    font-family: 'Manrope', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    padding: 0 16px;
-    height: 32px;
-    border-radius: 24px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-    flex-shrink: 0;
-    transition: background 0.18s;
-  }
-  .mc-btn:hover { background:#1a6fc4; }
+
+/* ==================================================
+   MOBILE HEADER  (visible < 1024px)
+================================================== */
+
+/* Hide mobile elements on desktop / tablet */
+@media (min-width: 1024px) {
+  .mc-mob-header,
+  .mc-mob-overlay,
+  .mc-mob-drawer { display:none !important; }
+}
+
+/* --- Mobile sticky bar --- */
+.mc-mob-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  box-shadow: 0px 8px 12px rgba(0,0,0,0.10);
+  height: 80px;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+}
+.mc-mob-header__left { display:flex; align-items:center; gap:16px; }
+
+/* Hamburger */
+.mc-mob-hamburger {
+  width:24px; height:18px;
+  display:flex; flex-direction:column; justify-content:space-between;
+  cursor:pointer; flex-shrink:0;
+  border:none; background:transparent; padding:0;
+}
+.mc-mob-hamburger span {
+  display:block; width:100%; height:2.5px;
+  background:#1F2024; border-radius:2px;
+}
+
+/* Mobile logo
+   Replace YOUR_LOGO_URL with your hosted image.
+*/
+.mc-mob-logo {
+  width:107px; height:24px;
+  object-fit:contain; display:block;
+  background:#eaf2ff; border-radius:4px; /* fallback */
+}
+
+/* Mobile Login link */
+.mc-mob-login {
+  font-family:'Manrope',sans-serif;
+  font-weight:600; font-size:15px;
+  color:#3188F4; text-decoration:none; white-space:nowrap;
+}
+.mc-mob-login:hover { color:#1a6fc4; }
+
+/* --- Overlay --- */
+.mc-mob-overlay {
+  position:fixed; inset:0;
+  background:rgba(0,0,0,0.35);
+  z-index:10000;
+  opacity:0; visibility:hidden;
+  transition: opacity 0.28s ease, visibility 0s linear 0.28s;
+}
+.mc-mob-overlay.is-open {
+  opacity:1; visibility:visible;
+  transition: opacity 0.28s ease, visibility 0s linear 0s;
+}
+
+/* --- Drawer panel --- */
+.mc-mob-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 100vh;
+  overflow-y: auto;
+  background:#ffffff;
+  z-index:10001;
+  display:flex; flex-direction:column;
+  transform: translateY(-100%);
+  transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
+}
+.mc-mob-drawer.is-open { transform: translateY(0); }
+
+/* Drawer topbar */
+.mc-mob-drawer__topbar {
+  display:flex; align-items:center;
+  height:56px; padding:0 20px; flex-shrink:0;
+}
+.mc-mob-close {
+  width:32px; height:32px;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; border:none; background:transparent; padding:0;
+  border-radius:50%; transition:background 0.15s; flex-shrink:0;
+}
+.mc-mob-close:hover { background:#f3f4f6; }
+.mc-mob-close svg { display:block; }
+
+/* Drawer scrollable body */
+.mc-mob-drawer__body {
+  flex:1; overflow-y:auto;
+  padding:8px 20px 0;
+  display:flex; flex-direction:column;
+}
+
+/* Section heading */
+.mc-mob-section-title {
+  font-family:'Manrope',sans-serif;
+  font-weight:800; font-size:17px; line-height:1.3;
+  color:#1F2024; margin-bottom:12px; padding-left:4px;
+}
+
+/* Mobile feature item */
+.mc-mob-feat-item {
+  display:flex; align-items:center; gap:14px;
+  padding:10px 8px; border-radius:10px;
+  text-decoration:none; cursor:pointer;
+  transition:background 0.15s;
+}
+.mc-mob-feat-item:hover { background:#f5f8ff; }
+
+/* Mobile icon circle — 40x40px container
+   SWAP placeholder for your real icon at 22x22px.
+   Circle stays 40x40 always.
+*/
+.mc-mob-feat-icon {
+  width:40px; height:40px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.mc-mob-feat-icon--green  { background:#edfaf3; }
+.mc-mob-feat-icon--purple { background:#f3eeff; }
+.mc-mob-feat-icon--blue   { background:#eaf2ff; }
+.mc-mob-feat-icon--teal   { background:#e6faf8; }
+.mc-mob-feat-icon--orange { background:#fff2ee; }
+
+/* Placeholder — remove when adding real icons */
+.mc-mob-feat-icon__ph { width:22px; height:22px; border-radius:3px; display:block; opacity:0.45; }
+
+.mc-mob-feat-title {
+  font-family:'Manrope',sans-serif;
+  font-weight:700; font-size:14px; line-height:1.25; color:#1F2024;
+}
+
+/* Divider */
+.mc-mob-divider { height:1px; background:rgba(217,225,237,0.7); margin:16px 0; border:none; }
+
+/* Quick links */
+.mc-mob-links-row { display:flex; flex-wrap:nowrap; gap:20px; padding:0 4px; margin-bottom:8px; }
+.mc-mob-link {
+  font-family:'Manrope',sans-serif;
+  font-weight:500; font-size:14px;
+  color:#454A55; text-decoration:none; line-height:2;
+  white-space:nowrap; transition:color 0.15s;
+}
+.mc-mob-link:hover { color:#3188F4; }
+
+/* Drawer footer buttons */
+.mc-mob-drawer__footer {
+  padding:16px 20px 28px;
+  display:flex; gap:12px; flex-shrink:0;
+}
+.mc-mob-btn {
+  flex:1; height:48px; border-radius:32px;
+  font-family:'Manrope',sans-serif;
+  font-weight:700; font-size:15px;
+  display:flex; align-items:center; justify-content:center;
+  text-decoration:none; cursor:pointer; border:none;
+  transition:background 0.18s, color 0.18s; white-space:nowrap;
+}
+.mc-mob-btn--outline {
+  background:#ffffff; border:2px solid #3188F4; color:#3188F4;
+}
+.mc-mob-btn--outline:hover { background:#eaf2ff; }
+.mc-mob-btn--fill { background:#3188F4; color:#ffffff; }
+.mc-mob-btn--fill:hover { background:#1a6fc4; }
 
 </style>
 </head>
 <body>
 
+
+<!-- ====================================================
+     DESKTOP HEADER  (shown >= 1024px)
+==================================================== -->
 <header class="mc-header">
   <div class="mc-header__inner">
 
-    <!-- ══════════ LOGO ══════════ -->
-    <!--
-      Single image placeholder for the full Mobicip logo.
-      Replace YOUR_LOGO_URL with your hosted image URL e.g.
-        src="https://yourdomain.com/wp-content/uploads/mobicip-logo.png"
-      Recommended: PNG/SVG, transparent background, ~284×64px @2x
+    <!-- LOGO
+         Replace YOUR_LOGO_URL e.g. src="/wp-content/uploads/mobicip-logo.png"
+         Recommended: PNG/SVG transparent background, ~284x64px @2x
     -->
     <a href="/" class="mc-logo-link">
-      <img
-        class="mc-logo"
-        src="YOUR_LOGO_URL"
-        alt="Mobicip"
-        width="142"
-        height="32"
-      >
+      <img class="mc-logo" src="YOUR_LOGO_URL" alt="Mobicip" width="142" height="32">
     </a>
 
-    <!-- ══════════ NAV + CTA ══════════ -->
+    <!-- NAV + CTA -->
     <div class="mc-nav">
       <nav class="mc-nav__links">
 
-        <!-- ── FEATURES ── -->
+        <!-- FEATURES dropdown -->
         <div class="mc-item" id="mc-features">
           <div class="mc-item__label">
             <span class="mc-item__text">Features</span>
             <span class="mc-item__chevron">
-              <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="#454A55" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                <path d="M1 1L5 5L9 1" stroke="#454A55" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </span>
           </div>
 
           <div class="mc-dropdown mc-dropdown--features">
             <div class="mc-dd-grid">
 
-              <!-- 1. Screen Time Scheduler -->
+              <!-- 1. Screen Time Scheduler
+                   ICON: replace <svg class="mc-dd-icon__ph"...> with
+                   <img src="YOUR_ICON.svg" width="26" height="26" alt="">  -->
               <a href="#" class="mc-dd-item">
                 <div class="mc-dd-icon mc-dd-icon--green">
-                  <!--
-                    ICON PLACEHOLDER — Screen Time Scheduler
-                    Replace the <svg> below with:
-                    <img src="YOUR_ICON.svg" width="26" height="26" alt="">
-                    or your inline SVG icon at 26×26px
-                  -->
                   <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#22C55E"/></svg>
                 </div>
                 <div class="mc-dd-text">
@@ -299,7 +440,6 @@
               <!-- 2. Website Blocker -->
               <a href="#" class="mc-dd-item">
                 <div class="mc-dd-icon mc-dd-icon--purple">
-                  <!-- ICON PLACEHOLDER — Website Blocker (26×26px) -->
                   <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#A855F7"/></svg>
                 </div>
                 <div class="mc-dd-text">
@@ -311,7 +451,6 @@
               <!-- 3. Social Media Monitor -->
               <a href="#" class="mc-dd-item">
                 <div class="mc-dd-icon mc-dd-icon--purple">
-                  <!-- ICON PLACEHOLDER — Social Media Monitor (26×26px) -->
                   <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#7C3AED"/></svg>
                 </div>
                 <div class="mc-dd-text">
@@ -323,7 +462,6 @@
               <!-- 4. Family Locator -->
               <a href="#" class="mc-dd-item">
                 <div class="mc-dd-icon mc-dd-icon--blue">
-                  <!-- ICON PLACEHOLDER — Family Locator (26×26px) -->
                   <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#3188F4"/></svg>
                 </div>
                 <div class="mc-dd-text">
@@ -335,7 +473,6 @@
               <!-- 5. App Blocker -->
               <a href="#" class="mc-dd-item">
                 <div class="mc-dd-icon mc-dd-icon--purple">
-                  <!-- ICON PLACEHOLDER — App Blocker (26×26px) -->
                   <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#9333EA"/></svg>
                 </div>
                 <div class="mc-dd-text">
@@ -347,7 +484,6 @@
               <!-- 6. Expert Advice -->
               <a href="#" class="mc-dd-item">
                 <div class="mc-dd-icon mc-dd-icon--teal">
-                  <!-- ICON PLACEHOLDER — Expert Advice (26×26px) -->
                   <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#14B8A6"/></svg>
                 </div>
                 <div class="mc-dd-text">
@@ -359,7 +495,6 @@
               <!-- 7. Activity Summary -->
               <a href="#" class="mc-dd-item">
                 <div class="mc-dd-icon mc-dd-icon--blue">
-                  <!-- ICON PLACEHOLDER — Activity Summary (26×26px) -->
                   <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#3B82F6"/></svg>
                 </div>
                 <div class="mc-dd-text">
@@ -371,7 +506,6 @@
               <!-- 8. Collaboration -->
               <a href="#" class="mc-dd-item">
                 <div class="mc-dd-icon mc-dd-icon--orange">
-                  <!-- ICON PLACEHOLDER — Collaboration (26×26px) -->
                   <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#F97316"/></svg>
                 </div>
                 <div class="mc-dd-text">
@@ -380,30 +514,32 @@
                 </div>
               </a>
 
-            </div><!-- /mc-dd-grid -->
-          </div><!-- /mc-dropdown--features -->
-        </div><!-- /mc-item features -->
+            </div>
+          </div>
+        </div>
 
-        <!-- ── PRICING ── -->
+        <!-- PRICING -->
         <div class="mc-item">
           <div class="mc-item__label">
             <a href="#" class="mc-item__text">Pricing</a>
           </div>
         </div>
 
-        <!-- ── SUPPORT ── -->
+        <!-- SUPPORT -->
         <div class="mc-item">
           <div class="mc-item__label">
             <a href="#" class="mc-item__text">Support</a>
           </div>
         </div>
 
-        <!-- ── RESOURCES ── -->
+        <!-- RESOURCES dropdown -->
         <div class="mc-item" id="mc-resources">
           <div class="mc-item__label">
             <span class="mc-item__text">Resources</span>
             <span class="mc-item__chevron">
-              <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="#454A55" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                <path d="M1 1L5 5L9 1" stroke="#454A55" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </span>
           </div>
 
@@ -413,7 +549,6 @@
               <!-- Blog -->
               <a href="#" class="mc-dd-item mc-dd-item--simple">
                 <div class="mc-dd-icon mc-dd-icon--green">
-                  <!-- ICON PLACEHOLDER — Blog (26×26px) -->
                   <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#22C55E"/></svg>
                 </div>
                 <div class="mc-dd-text">
@@ -424,7 +559,6 @@
               <!-- Testimonials -->
               <a href="#" class="mc-dd-item mc-dd-item--simple">
                 <div class="mc-dd-icon mc-dd-icon--blue">
-                  <!-- ICON PLACEHOLDER — Testimonials (26×26px) -->
                   <svg class="mc-dd-icon__ph" viewBox="0 0 26 26" fill="none"><rect width="26" height="26" rx="4" fill="#3188F4"/></svg>
                 </div>
                 <div class="mc-dd-text">
@@ -434,9 +568,9 @@
 
             </div>
           </div>
-        </div><!-- /mc-item resources -->
+        </div>
 
-        <!-- ── LOGIN ── -->
+        <!-- LOGIN -->
         <div class="mc-item">
           <div class="mc-item__label">
             <a href="#" class="mc-item__text mc-item__text--login">Login</a>
@@ -452,16 +586,152 @@
 </header>
 
 
+<!-- ====================================================
+     MOBILE HEADER  (shown < 1024px)
+==================================================== -->
+
+<!-- Mobile sticky bar -->
+<header class="mc-mob-header">
+  <div class="mc-mob-header__left">
+    <button class="mc-mob-hamburger" id="mc-mob-open" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <!-- LOGO: replace YOUR_LOGO_URL -->
+    <a href="/">
+      <img class="mc-mob-logo" src="YOUR_LOGO_URL" alt="Mobicip" width="107" height="24">
+    </a>
+  </div>
+  <a href="#" class="mc-mob-login">Login</a>
+</header>
+
+<!-- Overlay -->
+<div class="mc-mob-overlay" id="mc-mob-overlay"></div>
+
+<!-- Drawer -->
+<div class="mc-mob-drawer" id="mc-mob-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+
+  <!-- Close button -->
+  <div class="mc-mob-drawer__topbar">
+    <button class="mc-mob-close" id="mc-mob-close" aria-label="Close menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <path d="M1 1L17 17M17 1L1 17" stroke="#1F2024" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Scrollable content -->
+  <div class="mc-mob-drawer__body">
+
+    <p class="mc-mob-section-title">Parental Features</p>
+
+    <!-- 1. Screen Time Scheduler
+         ICON: replace <svg class="mc-mob-feat-icon__ph"...> with
+         <img src="YOUR_ICON.svg" width="22" height="22" alt="">  -->
+    <a href="#" class="mc-mob-feat-item">
+      <div class="mc-mob-feat-icon mc-mob-feat-icon--green">
+        <svg class="mc-mob-feat-icon__ph" viewBox="0 0 22 22" fill="none"><rect width="22" height="22" rx="3" fill="#22C55E"/></svg>
+      </div>
+      <span class="mc-mob-feat-title">Screen Time Scheduler</span>
+    </a>
+
+    <!-- 2. Social Media Monitor -->
+    <a href="#" class="mc-mob-feat-item">
+      <div class="mc-mob-feat-icon mc-mob-feat-icon--purple">
+        <svg class="mc-mob-feat-icon__ph" viewBox="0 0 22 22" fill="none"><rect width="22" height="22" rx="3" fill="#7C3AED"/></svg>
+      </div>
+      <span class="mc-mob-feat-title">Social Media Monitor</span>
+    </a>
+
+    <!-- 3. App Blocker -->
+    <a href="#" class="mc-mob-feat-item">
+      <div class="mc-mob-feat-icon mc-mob-feat-icon--purple">
+        <svg class="mc-mob-feat-icon__ph" viewBox="0 0 22 22" fill="none"><rect width="22" height="22" rx="3" fill="#9333EA"/></svg>
+      </div>
+      <span class="mc-mob-feat-title">App Blocker</span>
+    </a>
+
+    <!-- 4. Activity Summary -->
+    <a href="#" class="mc-mob-feat-item">
+      <div class="mc-mob-feat-icon mc-mob-feat-icon--blue">
+        <svg class="mc-mob-feat-icon__ph" viewBox="0 0 22 22" fill="none"><rect width="22" height="22" rx="3" fill="#3B82F6"/></svg>
+      </div>
+      <span class="mc-mob-feat-title">Activity Summary</span>
+    </a>
+
+    <!-- 5. Website Blocker -->
+    <a href="#" class="mc-mob-feat-item">
+      <div class="mc-mob-feat-icon mc-mob-feat-icon--purple">
+        <svg class="mc-mob-feat-icon__ph" viewBox="0 0 22 22" fill="none"><rect width="22" height="22" rx="3" fill="#A855F7"/></svg>
+      </div>
+      <span class="mc-mob-feat-title">Website Blocker</span>
+    </a>
+
+    <!-- 6. Family Locator -->
+    <a href="#" class="mc-mob-feat-item">
+      <div class="mc-mob-feat-icon mc-mob-feat-icon--blue">
+        <svg class="mc-mob-feat-icon__ph" viewBox="0 0 22 22" fill="none"><rect width="22" height="22" rx="3" fill="#3188F4"/></svg>
+      </div>
+      <span class="mc-mob-feat-title">Family Locator</span>
+    </a>
+
+    <!-- 7. Expert Advice -->
+    <a href="#" class="mc-mob-feat-item">
+      <div class="mc-mob-feat-icon mc-mob-feat-icon--teal">
+        <svg class="mc-mob-feat-icon__ph" viewBox="0 0 22 22" fill="none"><rect width="22" height="22" rx="3" fill="#14B8A6"/></svg>
+      </div>
+      <span class="mc-mob-feat-title">Expert Advice</span>
+    </a>
+
+    <!-- 8. Collaboration -->
+    <a href="#" class="mc-mob-feat-item">
+      <div class="mc-mob-feat-icon mc-mob-feat-icon--orange">
+        <svg class="mc-mob-feat-icon__ph" viewBox="0 0 22 22" fill="none"><rect width="22" height="22" rx="3" fill="#F97316"/></svg>
+      </div>
+      <span class="mc-mob-feat-title">Collaboration</span>
+    </a>
+
+    <hr class="mc-mob-divider">
+
+    <div class="mc-mob-links-row">
+      <a href="#" class="mc-mob-link">Pricing</a>
+      <a href="#" class="mc-mob-link">Blog</a>
+      <a href="#" class="mc-mob-link">Refer a Friend</a>
+      <a href="#" class="mc-mob-link">Support</a>
+    </div>
+    <div class="mc-mob-links-row">
+      <a href="#" class="mc-mob-link">Testimonials</a>
+      <a href="#" class="mc-mob-link">Contact Us</a>
+      <a href="#" class="mc-mob-link">About</a>
+    </div>
+
+    <div style="flex:1; min-height:16px;"></div>
+  </div>
+
+  <!-- Footer CTA buttons -->
+  <div class="mc-mob-drawer__footer">
+    <a href="#" class="mc-mob-btn mc-mob-btn--outline">Login</a>
+    <a href="#" class="mc-mob-btn mc-mob-btn--fill">Start Free Trial</a>
+  </div>
+
+</div>
+
+
+<!-- ====================================================
+     SCRIPTS
+==================================================== -->
 <script>
 (function () {
-  var items = document.querySelectorAll('.mc-item');
 
-  items.forEach(function (item) {
+  /* ---- Desktop dropdowns ---- */
+  var desktopItems = document.querySelectorAll('.mc-item');
+
+  desktopItems.forEach(function (item) {
     if (!item.querySelector('.mc-dropdown')) return;
 
-    // Hover open
     item.addEventListener('mouseenter', function () {
-      closeAll();
+      closeAllDesktop();
       item.classList.add('is-open');
     });
     item.addEventListener('mouseleave', function (e) {
@@ -470,23 +740,49 @@
       }
     });
 
-    // Click toggle (touch-friendly)
     var label = item.querySelector('.mc-item__label');
     if (label) {
       label.addEventListener('click', function (e) {
         e.stopPropagation();
         var wasOpen = item.classList.contains('is-open');
-        closeAll();
+        closeAllDesktop();
         if (!wasOpen) item.classList.add('is-open');
       });
     }
   });
 
-  document.addEventListener('click', closeAll);
+  document.addEventListener('click', closeAllDesktop);
 
-  function closeAll() {
-    items.forEach(function (i) { i.classList.remove('is-open'); });
+  function closeAllDesktop() {
+    desktopItems.forEach(function (i) { i.classList.remove('is-open'); });
   }
+
+  /* ---- Mobile drawer ---- */
+  var openBtn = document.getElementById('mc-mob-open');
+  var closeBtn = document.getElementById('mc-mob-close');
+  var overlay  = document.getElementById('mc-mob-overlay');
+  var drawer   = document.getElementById('mc-mob-drawer');
+
+  if (openBtn) {
+    openBtn.addEventListener('click', openDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeDrawer();
+    });
+  }
+
+  function openDrawer() {
+    drawer.classList.add('is-open');
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
 })();
 </script>
 
