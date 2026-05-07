@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobicip Footer</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+  }
+
+  /* ============ TOP CTA BAND ============ */
+  .footer-cta {
+    background-color: #1A2845;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 72px 20px;
+    width: 100%;
+  }
+
+  .footer-cta__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .footer-cta__heading {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 34px;
+    line-height: 44px;
+    color: #FFFFFF;
+    text-align: center;
+    max-width: 800px;
+  }
+
+  .footer-cta__badges {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-cta__badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .footer-cta__badge-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  .footer-cta__badge-text {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1;
+    color: #DEEBFF;
+    white-space: nowrap;
+  }
+
+  .footer-cta__btn {
+    background-color: #3188F4;
+    color: #FFFFFF;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
+    padding: 0 40px;
+    height: 56px;
+    border-radius: 32px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+  }
+
+  .footer-cta__btn:hover {
+    opacity: 0.9;
+  }
+
+  /* ============ BOTTOM LINKS SECTION ============ */
+  .footer-bottom {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .footer-divider-top {
+    width: 100%;
+    max-width: 1440px;
+    height: 1px;
+    background-color: rgba(217, 225, 237, 0.5);
+    opacity: 0.8;
+  }
+
+  .footer-links-wrapper {
+    display: flex;
+    gap: 88px;
+    align-items: flex-start;
+    padding: 72px 0;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-cols {
+    display: flex;
+    gap: 136px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  /* ============ FOOTER COLUMN ============ */
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .footer-col__title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    color: #1F2024;
+    white-space: nowrap;
+  }
+
+  .footer-col__links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .footer-col__link {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1;
+    color: #454A55;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+
+  .footer-col__link:hover {
+    color: #3188F4;
+  }
+
+  /* ============ RIGHT COLUMN ============ */
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+
+  /* ============ SOCIAL ICONS ============ */
+  .footer-connect {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .footer-socials {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .footer-socials__icon {
+    width: 32px;
+    height: 32px;
+    display: block;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .footer-socials__icon:hover {
+    opacity: 0.8;
+  }
+
+  /* ============ NEWSLETTER ============ */
+  .footer-newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .footer-newsletter__title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    color: #1F2024;
+    white-space: nowrap;
+  }
+
+  .footer-newsletter__form {
+    position: relative;
+    width: 385px;
+    height: 56px;
+  }
+
+  .footer-newsletter__input {
+    width: 100%;
+    height: 56px;
+    background: #FFFFFF;
+    border: 1px solid #D6DFEF;
+    border-radius: 32px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+    padding: 10px 170px 10px 24px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #454A55;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .footer-newsletter__input::placeholder {
+    color: #454A55;
+  }
+
+  .footer-newsletter__input:focus {
+    border-color: #3188F4;
+  }
+
+  .footer-newsletter__btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 56px;
+    width: 158px;
+    background: #FFFFFF;
+    border: 2px solid #3188F4;
+    border-radius: 32px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #3188F4;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .footer-newsletter__btn:hover {
+    background: #3188F4;
+    color: #FFFFFF;
+  }
+
+  /* ============ BOTTOM BAR ============ */
+  .footer-bottom-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding-bottom: 40px;
+  }
+
+  .footer-divider-bottom {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(217, 225, 237, 0.5);
+    opacity: 0.8;
+  }
+
+  .footer-copyright {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .footer-copyright__logo {
+    width: 23px;
+    height: 24px;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .footer-copyright__text {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1;
+    color: #969FAF;
+    white-space: nowrap;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 1100px) {
+    .footer-cols {
+      gap: 60px;
+    }
+    .footer-links-wrapper {
+      gap: 60px;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .footer-cta__heading {
+      font-size: 26px;
+      line-height: 36px;
+    }
+    .footer-cols {
+      gap: 40px;
+    }
+    .footer-links-wrapper {
+      gap: 48px;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 24px;
+    }
+    .footer-right {
+      gap: 40px;
+    }
+    .footer-newsletter__form {
+      width: 320px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-cta__badges {
+      flex-direction: column;
+      gap: 16px;
+    }
+    .footer-cta__heading {
+      font-size: 22px;
+      line-height: 32px;
+    }
+    .footer-cols {
+      flex-direction: column;
+      gap: 40px;
+    }
+    .footer-newsletter__form {
+      width: 290px;
+    }
+    .footer-newsletter__btn {
+      width: 130px;
+      font-size: 16px;
+    }
+    .footer-newsletter__input {
+      padding-right: 140px;
+      font-size: 16px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== FOOTER ===== -->
+<div id="mobicip-footer">
+
+  <!-- TOP CTA BAND -->
+  <div class="footer-cta">
+    <div class="footer-cta__content">
+      <h2 class="footer-cta__heading">Secure your child's digital world and protect their innocence</h2>
+      <div class="footer-cta__badges">
+        <div class="footer-cta__badge">
+          <img class="footer-cta__badge-icon" src="https://www.figma.com/api/mcp/asset/555021dc-578a-49a8-9d1c-776e4e65d673" alt="check">
+          <span class="footer-cta__badge-text">7-day Free Trial</span>
+        </div>
+        <div class="footer-cta__badge">
+          <img class="footer-cta__badge-icon" src="https://www.figma.com/api/mcp/asset/555021dc-578a-49a8-9d1c-776e4e65d673" alt="check">
+          <span class="footer-cta__badge-text">Upgrade Anytime</span>
+        </div>
+        <div class="footer-cta__badge">
+          <img class="footer-cta__badge-icon" src="https://www.figma.com/api/mcp/asset/555021dc-578a-49a8-9d1c-776e4e65d673" alt="check">
+          <span class="footer-cta__badge-text">Fast and Friendly Support</span>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="footer-cta__btn">Start your 7-day free trial today!</a>
+  </div>
+
+  <!-- BOTTOM LINKS SECTION -->
+  <div class="footer-bottom">
+    <div class="footer-divider-top"></div>
+
+    <div class="footer-links-wrapper">
+      <!-- LEFT: 4 columns -->
+      <div class="footer-cols">
+
+        <!-- Platforms -->
+        <div class="footer-col">
+          <span class="footer-col__title">Platforms</span>
+          <div class="footer-col__links">
+            <a href="#" class="footer-col__link">iPhone</a>
+            <a href="#" class="footer-col__link">iPad</a>
+            <a href="#" class="footer-col__link">Android</a>
+            <a href="#" class="footer-col__link">Kindle Fire</a>
+            <a href="#" class="footer-col__link">Mac</a>
+            <a href="#" class="footer-col__link">Windows</a>
+            <a href="#" class="footer-col__link">Chromebook</a>
+          </div>
+        </div>
+
+        <!-- Resources -->
+        <div class="footer-col">
+          <span class="footer-col__title">Resources</span>
+          <div class="footer-col__links">
+            <a href="#" class="footer-col__link">Support</a>
+            <a href="#" class="footer-col__link">Forum</a>
+            <a href="#" class="footer-col__link">Partners</a>
+            <a href="#" class="footer-col__link">School</a>
+            <a href="#" class="footer-col__link">Business</a>
+            <a href="#" class="footer-col__link">Refer a Friend</a>
+            <a href="#" class="footer-col__link">Testimonials</a>
+          </div>
+        </div>
+
+        <!-- Company -->
+        <div class="footer-col">
+          <span class="footer-col__title">Company</span>
+          <div class="footer-col__links">
+            <a href="#" class="footer-col__link">About</a>
+            <a href="#" class="footer-col__link">Blog</a>
+            <a href="#" class="footer-col__link">Terms</a>
+            <a href="#" class="footer-col__link">Privacy</a>
+            <a href="#" class="footer-col__link">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Connect + Newsletter -->
+        <div class="footer-right">
+
+          <!-- Connect / Social -->
+          <div class="footer-connect">
+            <span class="footer-col__title">Connect</span>
+            <div class="footer-socials">
+              <a href="#">
+                <img class="footer-socials__icon" src="https://www.figma.com/api/mcp/asset/614b1d36-b572-4f94-9d41-b96bcca3bb78" alt="Facebook">
+              </a>
+              <a href="#">
+                <!-- X / Twitter — using inline SVG for reliability -->
+                <svg class="footer-socials__icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="16" cy="16" r="16" fill="#000"/>
+                  <path d="M18.244 13.755L24.497 7H23.047L17.59 12.883L13.2 7H8L14.556 16.891L8 24H9.45L15.209 17.78L19.8 24H25L18.244 13.755ZM15.922 16.975L15.249 16.008L9.961 8.12H12.502L16.52 13.705L17.193 14.672L23.048 22.928H20.507L15.922 16.975Z" fill="white"/>
+                </svg>
+              </a>
+              <a href="#">
+                <img class="footer-socials__icon" src="https://www.figma.com/api/mcp/asset/a60cc4b6-3e09-44af-9093-379a2e6c9943" alt="LinkedIn">
+              </a>
+              <a href="#">
+                <img class="footer-socials__icon" src="https://www.figma.com/api/mcp/asset/b78b696e-01e3-4045-9621-caadeea9feda" alt="Instagram">
+              </a>
+              <a href="#">
+                <img class="footer-socials__icon" src="https://www.figma.com/api/mcp/asset/e485147b-f3ee-4da6-bf5f-adec01fe7cb5" alt="YouTube">
+              </a>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-newsletter">
+            <span class="footer-newsletter__title">Sign up for Newsletter</span>
+            <div class="footer-newsletter__form">
+              <input class="footer-newsletter__input" type="email" placeholder="Enter your email">
+              <button class="footer-newsletter__btn">Subscribe</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar: divider + copyright -->
+    <div class="footer-bottom-bar">
+      <div class="footer-divider-bottom"></div>
+      <div class="footer-copyright">
+        <img class="footer-copyright__logo" src="https://www.figma.com/api/mcp/asset/c5a4a0a3-3a6d-47ca-891c-e2449a38820a" alt="Mobicip">
+        <span class="footer-copyright__text">Copyright © 2022 Mobicip.LLC</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
